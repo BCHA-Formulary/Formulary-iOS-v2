@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF59AFB11EAFE882002D06DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59AFB01EAFE882002D06DD /* AppDelegate.swift */; };
+		AF59AFB31EAFE882002D06DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59AFB21EAFE882002D06DD /* ViewController.swift */; };
+		AF59AFB61EAFE882002D06DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF59AFB41EAFE882002D06DD /* Main.storyboard */; };
+		AF59AFB91EAFE882002D06DD /* BCHA_Formulary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF59AFB71EAFE882002D06DD /* BCHA_Formulary.xcdatamodeld */; };
+		AF59AFBB1EAFE882002D06DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF59AFBA1EAFE882002D06DD /* Assets.xcassets */; };
+		AF59AFBE1EAFE882002D06DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF59AFBC1EAFE882002D06DD /* LaunchScreen.storyboard */; };
+		AF59AFC91EAFE882002D06DD /* BCHA_FormularyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59AFC81EAFE882002D06DD /* BCHA_FormularyTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF59AFC51EAFE882002D06DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF59AFA51EAFE882002D06DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF59AFAC1EAFE882002D06DD;
+			remoteInfo = "BCHA-Formulary";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AF59AFAD1EAFE882002D06DD /* BCHA-Formulary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BCHA-Formulary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF59AFB01EAFE882002D06DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AF59AFB21EAFE882002D06DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF59AFB51EAFE882002D06DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF59AFB81EAFE882002D06DD /* BCHA_Formulary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BCHA_Formulary.xcdatamodel; sourceTree = "<group>"; };
+		AF59AFBA1EAFE882002D06DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF59AFBD1EAFE882002D06DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AF59AFBF1EAFE882002D06DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF59AFC41EAFE882002D06DD /* BCHA-FormularyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BCHA-FormularyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF59AFC81EAFE882002D06DD /* BCHA_FormularyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCHA_FormularyTests.swift; sourceTree = "<group>"; };
+		AF59AFCA1EAFE882002D06DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF59AFAA1EAFE882002D06DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF59AFC11EAFE882002D06DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AF59AFA41EAFE882002D06DD = {
+			isa = PBXGroup;
+			children = (
+				AF59AFAF1EAFE882002D06DD /* BCHA-Formulary */,
+				AF59AFC71EAFE882002D06DD /* BCHA-FormularyTests */,
+				AF59AFAE1EAFE882002D06DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AF59AFAE1EAFE882002D06DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF59AFAD1EAFE882002D06DD /* BCHA-Formulary.app */,
+				AF59AFC41EAFE882002D06DD /* BCHA-FormularyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF59AFAF1EAFE882002D06DD /* BCHA-Formulary */ = {
+			isa = PBXGroup;
+			children = (
+				AF59AFB01EAFE882002D06DD /* AppDelegate.swift */,
+				AF59AFB21EAFE882002D06DD /* ViewController.swift */,
+				AF59AFB41EAFE882002D06DD /* Main.storyboard */,
+				AF59AFBA1EAFE882002D06DD /* Assets.xcassets */,
+				AF59AFBC1EAFE882002D06DD /* LaunchScreen.storyboard */,
+				AF59AFBF1EAFE882002D06DD /* Info.plist */,
+				AF59AFB71EAFE882002D06DD /* BCHA_Formulary.xcdatamodeld */,
+			);
+			path = "BCHA-Formulary";
+			sourceTree = "<group>";
+		};
+		AF59AFC71EAFE882002D06DD /* BCHA-FormularyTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF59AFC81EAFE882002D06DD /* BCHA_FormularyTests.swift */,
+				AF59AFCA1EAFE882002D06DD /* Info.plist */,
+			);
+			path = "BCHA-FormularyTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF59AFAC1EAFE882002D06DD /* BCHA-Formulary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF59AFCD1EAFE882002D06DD /* Build configuration list for PBXNativeTarget "BCHA-Formulary" */;
+			buildPhases = (
+				AF59AFA91EAFE882002D06DD /* Sources */,
+				AF59AFAA1EAFE882002D06DD /* Frameworks */,
+				AF59AFAB1EAFE882002D06DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BCHA-Formulary";
+			productName = "BCHA-Formulary";
+			productReference = AF59AFAD1EAFE882002D06DD /* BCHA-Formulary.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF59AFC31EAFE882002D06DD /* BCHA-FormularyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF59AFD01EAFE882002D06DD /* Build configuration list for PBXNativeTarget "BCHA-FormularyTests" */;
+			buildPhases = (
+				AF59AFC01EAFE882002D06DD /* Sources */,
+				AF59AFC11EAFE882002D06DD /* Frameworks */,
+				AF59AFC21EAFE882002D06DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF59AFC61EAFE882002D06DD /* PBXTargetDependency */,
+			);
+			name = "BCHA-FormularyTests";
+			productName = "BCHA-FormularyTests";
+			productReference = AF59AFC41EAFE882002D06DD /* BCHA-FormularyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF59AFA51EAFE882002D06DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = BCHA;
+				TargetAttributes = {
+					AF59AFAC1EAFE882002D06DD = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = HJ9RR6V7U3;
+						ProvisioningStyle = Automatic;
+					};
+					AF59AFC31EAFE882002D06DD = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = HJ9RR6V7U3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AF59AFAC1EAFE882002D06DD;
+					};
+				};
+			};
+			buildConfigurationList = AF59AFA81EAFE882002D06DD /* Build configuration list for PBXProject "BCHA-Formulary" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF59AFA41EAFE882002D06DD;
+			productRefGroup = AF59AFAE1EAFE882002D06DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF59AFAC1EAFE882002D06DD /* BCHA-Formulary */,
+				AF59AFC31EAFE882002D06DD /* BCHA-FormularyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF59AFAB1EAFE882002D06DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF59AFBE1EAFE882002D06DD /* LaunchScreen.storyboard in Resources */,
+				AF59AFBB1EAFE882002D06DD /* Assets.xcassets in Resources */,
+				AF59AFB61EAFE882002D06DD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF59AFC21EAFE882002D06DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF59AFA91EAFE882002D06DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF59AFB91EAFE882002D06DD /* BCHA_Formulary.xcdatamodeld in Sources */,
+				AF59AFB31EAFE882002D06DD /* ViewController.swift in Sources */,
+				AF59AFB11EAFE882002D06DD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF59AFC01EAFE882002D06DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF59AFC91EAFE882002D06DD /* BCHA_FormularyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF59AFC61EAFE882002D06DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF59AFAC1EAFE882002D06DD /* BCHA-Formulary */;
+			targetProxy = AF59AFC51EAFE882002D06DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF59AFB41EAFE882002D06DD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF59AFB51EAFE882002D06DD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AF59AFBC1EAFE882002D06DD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF59AFBD1EAFE882002D06DD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF59AFCB1EAFE882002D06DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AF59AFCC1EAFE882002D06DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF59AFCE1EAFE882002D06DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HJ9RR6V7U3;
+				INFOPLIST_FILE = "BCHA-Formulary/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "BCHA.BCHA-Formulary";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		AF59AFCF1EAFE882002D06DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HJ9RR6V7U3;
+				INFOPLIST_FILE = "BCHA-Formulary/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "BCHA.BCHA-Formulary";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		AF59AFD11EAFE882002D06DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = HJ9RR6V7U3;
+				INFOPLIST_FILE = "BCHA-FormularyTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "BCHA.BCHA-FormularyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BCHA-Formulary.app/BCHA-Formulary";
+			};
+			name = Debug;
+		};
+		AF59AFD21EAFE882002D06DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = HJ9RR6V7U3;
+				INFOPLIST_FILE = "BCHA-FormularyTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "BCHA.BCHA-FormularyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BCHA-Formulary.app/BCHA-Formulary";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF59AFA81EAFE882002D06DD /* Build configuration list for PBXProject "BCHA-Formulary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF59AFCB1EAFE882002D06DD /* Debug */,
+				AF59AFCC1EAFE882002D06DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF59AFCD1EAFE882002D06DD /* Build configuration list for PBXNativeTarget "BCHA-Formulary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF59AFCE1EAFE882002D06DD /* Debug */,
+				AF59AFCF1EAFE882002D06DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AF59AFD01EAFE882002D06DD /* Build configuration list for PBXNativeTarget "BCHA-FormularyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF59AFD11EAFE882002D06DD /* Debug */,
+				AF59AFD21EAFE882002D06DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AF59AFB71EAFE882002D06DD /* BCHA_Formulary.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AF59AFB81EAFE882002D06DD /* BCHA_Formulary.xcdatamodel */,
+			);
+			currentVersion = AF59AFB81EAFE882002D06DD /* BCHA_Formulary.xcdatamodel */;
+			path = BCHA_Formulary.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AF59AFA51EAFE882002D06DD /* Project object */;
+}
