@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0732525FD9DE098528BB1C6D /* Pods_BCHA_Formulary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EC832AA75E3C69084A7C27 /* Pods_BCHA_Formulary.framework */; };
+		6279E7EA6582993D180C9A9D /* Pods_BCHA_FormularyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A120226E75C64C6105B82E9 /* Pods_BCHA_FormularyTests.framework */; };
 		AF59AFB11EAFE882002D06DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59AFB01EAFE882002D06DD /* AppDelegate.swift */; };
 		AF59AFB31EAFE882002D06DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59AFB21EAFE882002D06DD /* MainViewController.swift */; };
 		AF59AFB61EAFE882002D06DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF59AFB41EAFE882002D06DD /* Main.storyboard */; };
@@ -14,6 +16,7 @@
 		AF59AFBB1EAFE882002D06DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF59AFBA1EAFE882002D06DD /* Assets.xcassets */; };
 		AF59AFC91EAFE882002D06DD /* BCHA_FormularyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59AFC81EAFE882002D06DD /* BCHA_FormularyTests.swift */; };
 		AF7772A81EB00BAC00E20590 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7772A71EB00BAC00E20590 /* LaunchViewController.swift */; };
+		AF7772AB1EB0157300E20590 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF7772AA1EB0157300E20590 /* GoogleService-Info.plist */; };
 		AFDD388C1EAFFE0300908BAC /* DrugBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDD38861EAFFE0200908BAC /* DrugBase.swift */; };
 		AFDD388D1EAFFE0300908BAC /* ExcludedDrug.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDD38871EAFFE0200908BAC /* ExcludedDrug.swift */; };
 		AFDD388E1EAFFE0300908BAC /* FormularyDrug.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDD38881EAFFE0200908BAC /* FormularyDrug.swift */; };
@@ -34,6 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3874968E6DB7A1FCE0579554 /* Pods-BCHA-Formulary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCHA-Formulary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCHA-Formulary/Pods-BCHA-Formulary.debug.xcconfig"; sourceTree = "<group>"; };
+		3A5F1BF20404FE11600B4B8B /* Pods-BCHA-Formulary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCHA-Formulary.release.xcconfig"; path = "Pods/Target Support Files/Pods-BCHA-Formulary/Pods-BCHA-Formulary.release.xcconfig"; sourceTree = "<group>"; };
+		7A120226E75C64C6105B82E9 /* Pods_BCHA_FormularyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BCHA_FormularyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DA96075E98599101E92100A /* Pods-BCHA-FormularyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCHA-FormularyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BCHA-FormularyTests/Pods-BCHA-FormularyTests.release.xcconfig"; sourceTree = "<group>"; };
+		94EC832AA75E3C69084A7C27 /* Pods_BCHA_Formulary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BCHA_Formulary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF59AFAD1EAFE882002D06DD /* BCHA-Formulary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BCHA-Formulary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF59AFB01EAFE882002D06DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF59AFB21EAFE882002D06DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +53,7 @@
 		AF59AFC81EAFE882002D06DD /* BCHA_FormularyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCHA_FormularyTests.swift; sourceTree = "<group>"; };
 		AF59AFCA1EAFE882002D06DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF7772A71EB00BAC00E20590 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		AF7772AA1EB0157300E20590 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AFDD38861EAFFE0200908BAC /* DrugBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugBase.swift; sourceTree = "<group>"; };
 		AFDD38871EAFFE0200908BAC /* ExcludedDrug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcludedDrug.swift; sourceTree = "<group>"; };
 		AFDD38881EAFFE0200908BAC /* FormularyDrug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormularyDrug.swift; sourceTree = "<group>"; };
@@ -52,6 +61,7 @@
 		AFDD388A1EAFFE0200908BAC /* RestrictedDrug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestrictedDrug.swift; sourceTree = "<group>"; };
 		AFDD388B1EAFFE0300908BAC /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		AFDD38931EB0048600908BAC /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		B054E0DB47B9D05A8D03C70B /* Pods-BCHA-FormularyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCHA-FormularyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCHA-FormularyTests/Pods-BCHA-FormularyTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0732525FD9DE098528BB1C6D /* Pods_BCHA_Formulary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6279E7EA6582993D180C9A9D /* Pods_BCHA_FormularyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +119,8 @@
 				AF59AFAF1EAFE882002D06DD /* BCHA-Formulary */,
 				AF59AFC71EAFE882002D06DD /* BCHA-FormularyTests */,
 				AF59AFAE1EAFE882002D06DD /* Products */,
+				B13DF185D657FB944880120B /* Pods */,
+				C60F40ADDFF6DFD524551937 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +136,7 @@
 		AF59AFAF1EAFE882002D06DD /* BCHA-Formulary */ = {
 			isa = PBXGroup;
 			children = (
+				AF7772AA1EB0157300E20590 /* GoogleService-Info.plist */,
 				AFDD38951EB0060D00908BAC /* ViewControllers */,
 				AFDD38921EB0046B00908BAC /* Views */,
 				AF241CB21EAFFD5400081307 /* Models */,
@@ -160,6 +175,26 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		B13DF185D657FB944880120B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3874968E6DB7A1FCE0579554 /* Pods-BCHA-Formulary.debug.xcconfig */,
+				3A5F1BF20404FE11600B4B8B /* Pods-BCHA-Formulary.release.xcconfig */,
+				B054E0DB47B9D05A8D03C70B /* Pods-BCHA-FormularyTests.debug.xcconfig */,
+				8DA96075E98599101E92100A /* Pods-BCHA-FormularyTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C60F40ADDFF6DFD524551937 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94EC832AA75E3C69084A7C27 /* Pods_BCHA_Formulary.framework */,
+				7A120226E75C64C6105B82E9 /* Pods_BCHA_FormularyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,9 +202,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF59AFCD1EAFE882002D06DD /* Build configuration list for PBXNativeTarget "BCHA-Formulary" */;
 			buildPhases = (
+				C8ACD9A89CF99FAC035D8291 /* [CP] Check Pods Manifest.lock */,
 				AF59AFA91EAFE882002D06DD /* Sources */,
 				AF59AFAA1EAFE882002D06DD /* Frameworks */,
 				AF59AFAB1EAFE882002D06DD /* Resources */,
+				C3E16208B626969381C4BF46 /* [CP] Embed Pods Frameworks */,
+				5E1C55554469C09110C46B22 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,9 +222,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF59AFD01EAFE882002D06DD /* Build configuration list for PBXNativeTarget "BCHA-FormularyTests" */;
 			buildPhases = (
+				DAA00CAB087947757B4D2AC7 /* [CP] Check Pods Manifest.lock */,
 				AF59AFC01EAFE882002D06DD /* Sources */,
 				AF59AFC11EAFE882002D06DD /* Frameworks */,
 				AF59AFC21EAFE882002D06DD /* Resources */,
+				24D44EA7E8BFE5930F055BCA /* [CP] Embed Pods Frameworks */,
+				629E495DE4ADF4041627DA07 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFDD38941EB0048600908BAC /* LoadingView.xib in Resources */,
+				AF7772AB1EB0157300E20590 /* GoogleService-Info.plist in Resources */,
 				AF59AFBB1EAFE882002D06DD /* Assets.xcassets in Resources */,
 				AF59AFB61EAFE882002D06DD /* Main.storyboard in Resources */,
 			);
@@ -259,6 +301,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24D44EA7E8BFE5930F055BCA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BCHA-FormularyTests/Pods-BCHA-FormularyTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E1C55554469C09110C46B22 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BCHA-Formulary/Pods-BCHA-Formulary-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		629E495DE4ADF4041627DA07 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BCHA-FormularyTests/Pods-BCHA-FormularyTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3E16208B626969381C4BF46 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BCHA-Formulary/Pods-BCHA-Formulary-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8ACD9A89CF99FAC035D8291 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DAA00CAB087947757B4D2AC7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AF59AFA91EAFE882002D06DD /* Sources */ = {
@@ -403,6 +538,7 @@
 		};
 		AF59AFCE1EAFE882002D06DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3874968E6DB7A1FCE0579554 /* Pods-BCHA-Formulary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HJ9RR6V7U3;
@@ -416,6 +552,7 @@
 		};
 		AF59AFCF1EAFE882002D06DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A5F1BF20404FE11600B4B8B /* Pods-BCHA-Formulary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HJ9RR6V7U3;
@@ -429,6 +566,7 @@
 		};
 		AF59AFD11EAFE882002D06DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B054E0DB47B9D05A8D03C70B /* Pods-BCHA-FormularyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -444,6 +582,7 @@
 		};
 		AF59AFD21EAFE882002D06DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DA96075E98599101E92100A /* Pods-BCHA-FormularyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

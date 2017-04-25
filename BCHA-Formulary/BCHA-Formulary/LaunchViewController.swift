@@ -8,12 +8,23 @@
 
 import Foundation
 import UIKit
+import FirebaseDatabase
 
 class LaunchViewController: UIViewController {
+    var ref: FIRDatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        ref = FIRDatabase.database().reference()
+        ref.child("message").observeSingleEvent(of: .value, with: { (snapshot) in
+            //DO STUFF HERE
+            let v = snapshot.value as! String
+            print(v)
+            
+        })  { (error) in
+            print(error.localizedDescription)
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
