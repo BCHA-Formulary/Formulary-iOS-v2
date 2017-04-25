@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FormuarlyDrug:DrugBase{
+class FormularyDrug:DrugBase{
     var primaryName:String
     var nameType:NameType
     var alternateName = [String]()

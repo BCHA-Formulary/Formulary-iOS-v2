@@ -12,7 +12,6 @@
 		AF59AFB61EAFE882002D06DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF59AFB41EAFE882002D06DD /* Main.storyboard */; };
 		AF59AFB91EAFE882002D06DD /* BCHA_Formulary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF59AFB71EAFE882002D06DD /* BCHA_Formulary.xcdatamodeld */; };
 		AF59AFBB1EAFE882002D06DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF59AFBA1EAFE882002D06DD /* Assets.xcassets */; };
-		AF59AFBE1EAFE882002D06DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF59AFBC1EAFE882002D06DD /* LaunchScreen.storyboard */; };
 		AF59AFC91EAFE882002D06DD /* BCHA_FormularyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59AFC81EAFE882002D06DD /* BCHA_FormularyTests.swift */; };
 		AF7772A81EB00BAC00E20590 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7772A71EB00BAC00E20590 /* LaunchViewController.swift */; };
 		AFDD388C1EAFFE0300908BAC /* DrugBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDD38861EAFFE0200908BAC /* DrugBase.swift */; };
@@ -41,7 +40,6 @@
 		AF59AFB51EAFE882002D06DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF59AFB81EAFE882002D06DD /* BCHA_Formulary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BCHA_Formulary.xcdatamodel; sourceTree = "<group>"; };
 		AF59AFBA1EAFE882002D06DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AF59AFBD1EAFE882002D06DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF59AFBF1EAFE882002D06DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF59AFC41EAFE882002D06DD /* BCHA-FormularyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BCHA-FormularyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF59AFC81EAFE882002D06DD /* BCHA_FormularyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCHA_FormularyTests.swift; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 				AF59AFB01EAFE882002D06DD /* AppDelegate.swift */,
 				AF59AFB41EAFE882002D06DD /* Main.storyboard */,
 				AF59AFBA1EAFE882002D06DD /* Assets.xcassets */,
-				AF59AFBC1EAFE882002D06DD /* LaunchScreen.storyboard */,
 				AF59AFBF1EAFE882002D06DD /* Info.plist */,
 				AF59AFB71EAFE882002D06DD /* BCHA_Formulary.xcdatamodeld */,
 			);
@@ -248,7 +245,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF59AFBE1EAFE882002D06DD /* LaunchScreen.storyboard in Resources */,
 				AFDD38941EB0048600908BAC /* LoadingView.xib in Resources */,
 				AF59AFBB1EAFE882002D06DD /* Assets.xcassets in Resources */,
 				AF59AFB61EAFE882002D06DD /* Main.storyboard in Resources */,
@@ -307,14 +303,6 @@
 				AF59AFB51EAFE882002D06DD /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		AF59AFBC1EAFE882002D06DD /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AF59AFBD1EAFE882002D06DD /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
