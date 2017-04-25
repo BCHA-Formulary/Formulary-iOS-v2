@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LgS-Bv-uuz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -48,7 +48,7 @@
                                     <constraint firstItem="VTh-uK-c57" firstAttribute="top" secondItem="zwO-z4-3rH" secondAttribute="top" constant="30" id="aOk-cw-DfR"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search by generic or brand name" textAlignment="center" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8M3-YH-Bek">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search by generic or brand name" textAlignment="center" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8M3-YH-Bek" customClass="MPGTextField_Swift" customModule="BCHA_Formulary" customModuleProvider="target">
                                 <rect key="frame" x="70" y="285" width="460" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -56,9 +56,6 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pF8-2B-dMT">
                                 <rect key="frame" x="276" y="334" width="48" height="30"/>
                                 <state key="normal" title="Search"/>
-                                <connections>
-                                    <segue destination="jj3-iM-56X" kind="show" id="pdf-CI-ArL"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ff-Wi-YgU">
                                 <rect key="frame" x="530" y="172" width="50" height="50"/>
@@ -67,9 +64,6 @@
                                     <constraint firstAttribute="width" constant="50" id="Df1-ao-PcO"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="Help"/>
-                                <connections>
-                                    <segue destination="vmy-jh-xhw" kind="show" id="9Fz-Xo-dlj"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="BCHA_Banner" translatesAutoresizingMaskIntoConstraints="NO" id="Gjq-rf-IxT">
                                 <rect key="frame" x="20" y="522" width="560" height="58"/>
@@ -77,10 +71,34 @@
                                     <constraint firstAttribute="height" constant="58" id="SSF-An-ZgM"/>
                                 </constraints>
                             </imageView>
+                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9gH-Dt-Z3t">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zki-Cy-0hV">
+                                        <rect key="frame" x="290" y="290" width="20" height="20"/>
+                                        <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Updating Formulary (Please be patient)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdL-mG-5dp">
+                                        <rect key="frame" x="8" y="388" width="584" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="zki-Cy-0hV" firstAttribute="centerY" secondItem="9gH-Dt-Z3t" secondAttribute="centerY" id="BQ9-6a-iKC"/>
+                                    <constraint firstItem="MdL-mG-5dp" firstAttribute="centerX" secondItem="zki-Cy-0hV" secondAttribute="centerX" id="DKQ-Nt-h4F"/>
+                                    <constraint firstItem="MdL-mG-5dp" firstAttribute="leading" secondItem="9gH-Dt-Z3t" secondAttribute="leadingMargin" id="DqM-5Z-2ha"/>
+                                    <constraint firstItem="MdL-mG-5dp" firstAttribute="top" secondItem="zki-Cy-0hV" secondAttribute="bottom" constant="78" id="V7v-Nj-okp"/>
+                                    <constraint firstItem="zki-Cy-0hV" firstAttribute="centerX" secondItem="9gH-Dt-Z3t" secondAttribute="centerX" id="cbc-e7-NJn"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2Ff-Wi-YgU" firstAttribute="top" secondItem="zwO-z4-3rH" secondAttribute="bottom" constant="8" symbolic="YES" id="2jS-j0-ghc"/>
+                            <constraint firstItem="9gH-Dt-Z3t" firstAttribute="top" secondItem="zwO-z4-3rH" secondAttribute="top" id="6JW-v0-iby"/>
                             <constraint firstItem="zwO-z4-3rH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6KB-A2-cay"/>
                             <constraint firstAttribute="trailing" secondItem="zwO-z4-3rH" secondAttribute="trailing" id="FU5-MT-G16"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8M3-YH-Bek" secondAttribute="trailing" constant="50" id="GJf-7F-TyO"/>
@@ -90,6 +108,9 @@
                             <constraint firstItem="zwO-z4-3rH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="i3i-uo-tGg"/>
                             <constraint firstAttribute="bottom" secondItem="Gjq-rf-IxT" secondAttribute="bottom" constant="20" symbolic="YES" id="jlD-6V-xa2"/>
                             <constraint firstItem="Gjq-rf-IxT" firstAttribute="centerX" secondItem="pF8-2B-dMT" secondAttribute="centerX" id="kgH-V4-tP1"/>
+                            <constraint firstItem="9gH-Dt-Z3t" firstAttribute="leading" secondItem="zwO-z4-3rH" secondAttribute="leading" id="kpm-CR-S1S"/>
+                            <constraint firstItem="9gH-Dt-Z3t" firstAttribute="trailing" secondItem="zwO-z4-3rH" secondAttribute="trailing" id="mhV-Gv-fHw"/>
+                            <constraint firstItem="9gH-Dt-Z3t" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="moL-eY-v5J"/>
                             <constraint firstItem="2Ff-Wi-YgU" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="nhZ-55-V9A"/>
                             <constraint firstItem="pF8-2B-dMT" firstAttribute="baseline" secondItem="8M3-YH-Bek" secondAttribute="baseline" constant="50" id="oph-P8-53k"/>
                             <constraint firstItem="8M3-YH-Bek" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="q3N-Qk-MK2"/>
@@ -101,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="124" y="681"/>
+            <point key="canvasLocation" x="1028" y="626"/>
         </scene>
         <!--No Drug Result View Controller-->
         <scene sceneID="um2-l0-SAZ">
@@ -149,7 +170,6 @@
                             <constraint firstItem="tAA-wL-Gcd" firstAttribute="top" secondItem="ehn-lq-kKy" secondAttribute="bottom" constant="8" symbolic="YES" id="v5H-iV-XQF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="DCV-Uy-Uxb"/>
                     <connections>
                         <outlet property="drugNameTitle" destination="ehn-lq-kKy" id="3sr-Z9-fks"/>
                     </connections>
@@ -213,7 +233,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7QN-ex-UJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1654" y="681"/>
+            <point key="canvasLocation" x="1676" y="626"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="NiX-tY-z4w">
@@ -362,7 +382,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OKe-uU-2qg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="696" y="1637"/>
+            <point key="canvasLocation" x="932.79999999999995" y="1553.5232383808097"/>
         </scene>
         <!--Drug Class Search Table View Controller-->
         <scene sceneID="IRg-eQ-Qnp">
@@ -412,16 +432,50 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zdq-Z9-9te"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="PeK-8d-Zyd"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uY2-Pj-8OR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="876" y="681"/>
+            <point key="canvasLocation" x="274" y="626"/>
+        </scene>
+        <!--Launch View Controller-->
+        <scene sceneID="Uwd-Q0-imN">
+            <objects>
+                <viewController id="LgS-Bv-uuz" customClass="LaunchViewController" customModule="BCHA_Formulary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P6b-5h-7Xd"/>
+                        <viewControllerLayoutGuide type="bottom" id="b1A-f5-Qkw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SDm-eX-xgK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="aPg-Tj-Gd6">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aPg-Tj-Gd6" firstAttribute="top" secondItem="SDm-eX-xgK" secondAttribute="topMargin" id="6H1-o2-Niq"/>
+                            <constraint firstItem="b1A-f5-Qkw" firstAttribute="top" secondItem="aPg-Tj-Gd6" secondAttribute="bottom" id="O3f-6K-hHM"/>
+                            <constraint firstItem="aPg-Tj-Gd6" firstAttribute="leading" secondItem="SDm-eX-xgK" secondAttribute="leadingMargin" constant="-20" id="iv3-Ia-lsI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aPg-Tj-Gd6" secondAttribute="trailing" constant="-20" id="n7l-Ym-p6j"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="o5Y-S4-bXu"/>
+                    <connections>
+                        <segue destination="JA0-el-e1z" kind="show" identifier="MainNavControllerSeque" id="yOj-ia-pYO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b3b-cf-uvK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-513" y="626"/>
         </scene>
     </scenes>
     <resources>
         <image name="BCHA_Banner" width="708" height="52"/>
         <image name="Help" width="68" height="68"/>
+        <image name="Splash" width="640" height="680"/>
     </resources>
 </document>

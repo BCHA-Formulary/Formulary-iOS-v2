@@ -14,6 +14,7 @@
 		AF59AFBB1EAFE882002D06DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF59AFBA1EAFE882002D06DD /* Assets.xcassets */; };
 		AF59AFBE1EAFE882002D06DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF59AFBC1EAFE882002D06DD /* LaunchScreen.storyboard */; };
 		AF59AFC91EAFE882002D06DD /* BCHA_FormularyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59AFC81EAFE882002D06DD /* BCHA_FormularyTests.swift */; };
+		AF7772A81EB00BAC00E20590 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7772A71EB00BAC00E20590 /* LaunchViewController.swift */; };
 		AFDD388C1EAFFE0300908BAC /* DrugBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDD38861EAFFE0200908BAC /* DrugBase.swift */; };
 		AFDD388D1EAFFE0300908BAC /* ExcludedDrug.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDD38871EAFFE0200908BAC /* ExcludedDrug.swift */; };
 		AFDD388E1EAFFE0300908BAC /* FormularyDrug.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDD38881EAFFE0200908BAC /* FormularyDrug.swift */; };
@@ -45,6 +46,7 @@
 		AF59AFC41EAFE882002D06DD /* BCHA-FormularyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BCHA-FormularyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF59AFC81EAFE882002D06DD /* BCHA_FormularyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCHA_FormularyTests.swift; sourceTree = "<group>"; };
 		AF59AFCA1EAFE882002D06DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF7772A71EB00BAC00E20590 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		AFDD38861EAFFE0200908BAC /* DrugBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugBase.swift; sourceTree = "<group>"; };
 		AFDD38871EAFFE0200908BAC /* ExcludedDrug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcludedDrug.swift; sourceTree = "<group>"; };
 		AFDD38881EAFFE0200908BAC /* FormularyDrug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormularyDrug.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				AF59AFB21EAFE882002D06DD /* MainViewController.swift */,
+				AF7772A71EB00BAC00E20590 /* LaunchViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF59AFB91EAFE882002D06DD /* BCHA_Formulary.xcdatamodeld in Sources */,
+				AF7772A81EB00BAC00E20590 /* LaunchViewController.swift in Sources */,
 				AFDD388E1EAFFE0300908BAC /* FormularyDrug.swift in Sources */,
 				AFDD38901EAFFE0300908BAC /* RestrictedDrug.swift in Sources */,
 				AF59AFB31EAFE882002D06DD /* MainViewController.swift in Sources */,
