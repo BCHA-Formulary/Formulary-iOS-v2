@@ -12,25 +12,128 @@ import FirebaseDatabase
 
 class LaunchViewController: UIViewController {
     var ref: FIRDatabaseReference!
+    var drugList = [DrugBase]()
+    var completedCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //Set firebase for retrieve data
         ref = FIRDatabase.database().reference()
+        //Get Excluded endpoint drug objects
         ref.child("Excluded").observe(.value, with: { snapshot in
-            for child in snapshot.children {
-                let dict = (child as! FIRDataSnapshot).value as! NSDictionary
-                let name = dict["primaryName"] as! String
-                print(name)
+            var excludedCount = 0
+            for drugObj in snapshot.children {
+                let drugProp = (drugObj as! FIRDataSnapshot).value as! NSDictionary
+                
+                let pName = drugProp["primaryName"] as! String
+                
+                let nTypeString = drugProp["nameType"] as! String
+                let nType:NameType
+                if (nTypeString == NameType.GENERIC.rawValue) {
+                    nType = NameType.GENERIC
+                } else {
+                    nType = NameType.BRAND
+                }
+                
+                let crit = drugProp["criteria"] as! String
+                
+                let drugClassArr = drugProp["drugClass"] as! NSMutableArray
+                let drugClass = self.trimNSNull(arr: drugClassArr)
+                
+                let altNamesArr = drugProp["alternateName"] as! NSMutableArray
+                let altNames = self.trimNSNull(arr: altNamesArr)
+                
+                let eDrug = ExcludedDrug.init(primaryName: pName, nameType: nType, alternateNames: altNames, criteria: crit, status: Status.EXCLUDED, drugClass: drugClass)
+                
+                self.drugList.append(eDrug)
+                excludedCount += 1
             }
-//            let enumerator = snapshot.children
-//            while let rest = enumerator.nextObject() as? FIRDataSnapshot {
-////                print(rest.value!)
-//                let name = rest.value(forKey: "primaryName")
-//                print(name!)
-//            }
+            //done loading all objects
+            self.completedCount += 1
+            print("Excluded drug count:" + String(excludedCount))
             //TODO can not put here because of the 3 calls. need to check they are all done before moving on
-            self.performSegue(withIdentifier: "MainNavControllerSeque", sender: nil)
+            if (self.completedCount == 3){
+                self.performSegue(withIdentifier: "MainNavControllerSeque", sender: nil)
+            }
+        })
+        
+        //Get Restricted endpoint drug objects
+        ref.child("Restricted").observe(.value, with: { snapshot in
+            var restrictedCount = 0
+            for drugObj in snapshot.children {
+                let drugProp = (drugObj as! FIRDataSnapshot).value as! NSDictionary
+                
+                let pName = drugProp["primaryName"] as! String
+                
+                let nTypeString = drugProp["nameType"] as! String
+                let nType:NameType
+                if (nTypeString == NameType.GENERIC.rawValue) {
+                    nType = NameType.GENERIC
+                } else {
+                    nType = NameType.BRAND
+                }
+                
+                let crit = drugProp["criteria"] as! String
+                
+                let drugClassArr = drugProp["drugClass"] as! NSMutableArray
+                let drugClass = self.trimNSNull(arr: drugClassArr)
+                
+                let altNamesArr = drugProp["alternateName"] as! NSMutableArray
+                let altNames = self.trimNSNull(arr: altNamesArr)
+                
+                let rDrug = RestrictedDrug.init(primaryName: pName, nameType: nType, alternateNames: altNames, criteria: crit, status: Status.RESTRICTED, drugClass: drugClass)
+                
+                self.drugList.append(rDrug)
+                restrictedCount += 1
+            }
+            //done loading all objects
+            self.completedCount += 1
+            print("Restricted drug count:" + String(restrictedCount))
+            //TODO can not put here because of the 3 calls. need to check they are all done before moving on
+            if (self.completedCount == 3){
+                self.performSegue(withIdentifier: "MainNavControllerSeque", sender: nil)
+            }
+        })
+        
+        //Get Formulary endpoint drug objects
+        ref.child("Formulary").observe(.value, with: { snapshot in
+            var formularyCount = 0
+            for drugObj in snapshot.children {
+                let drugProp = (drugObj as! FIRDataSnapshot).value as! NSDictionary
+                
+                let pName = drugProp["primaryName"] as! String
+                
+                let nTypeString = drugProp["nameType"] as! String
+                let nType:NameType
+                if (nTypeString == NameType.GENERIC.rawValue) {
+                    nType = NameType.GENERIC
+                } else {
+                    nType = NameType.BRAND
+                }
+                
+                let drugClassArr = drugProp["drugClass"] as! NSMutableArray
+                let drugClass = self.trimNSNull(arr: drugClassArr)
+                
+                let altNamesArr = drugProp["alternateName"] as! NSMutableArray
+                let altNames = self.trimNSNull(arr: altNamesArr)
+                
+                let strengthArr = drugProp["strengths"] as! NSMutableArray
+                let strengths = self.trimNSNull(arr: strengthArr)
+                
+                let fDrug = FormularyDrug.init(primaryName: pName, nameType: nType, alternateNames: altNames, status: Status.FORMULARY, drugClass: drugClass, strengths: strengths)
+                
+                self.drugList.append(fDrug)
+                formularyCount += 1
+            }
+            //done loading all objects
+            self.completedCount += 1
+            print("Formulary drug count:" + String(formularyCount))
+            //TODO can not put here because of the 3 calls. need to check they are all done before moving on
+            if (self.completedCount == 3){
+                self.performSegue(withIdentifier: "MainNavControllerSeque", sender: nil)
+            }
         })
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -42,5 +145,19 @@ class LaunchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    /*
+     *   Due to the nature of adding/deleting firebase array elements, the indexing of some lists
+     *   may include some elements in the NSArray which are NSNull, these are elements we do NOT
+     *   want to include in our objects and tables so are filtered out before creating them
+     */
+    //TODO move this function to a better place
+    func trimNSNull(arr:NSMutableArray) -> [String] {
+        var stringArr = [String]()
+        for element in arr {
+            if let e  = element as? String {
+                stringArr.append(e)
+            }
+        }
+        return stringArr
+    }
 }
