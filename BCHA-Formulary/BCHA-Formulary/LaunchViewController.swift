@@ -17,23 +17,19 @@ class LaunchViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         ref = FIRDatabase.database().reference()
-//        ref.child("message").observeSingleEvent(of: .value, with: { (snapshot) in
-//            //DO STUFF HERE
-//            let v = snapshot.value as! String
-//            print(v)
-//            
-//        })  { (error) in
-//            print(error.localizedDescription)
-//        }
-//        ref.child("Formulary").observe(.childAdded, with: { (snapshot) -> Void in
-//            print(snapshot.value as! String)
-//        })
-        var count = 0
-        ref.child("Formulary").observe(.value, with: { snapshot in
-            for _ in snapshot.children {
-                count += 1
+        ref.child("Excluded").observe(.value, with: { snapshot in
+            for child in snapshot.children {
+                let dict = (child as! FIRDataSnapshot).value as! NSDictionary
+                let name = dict["primaryName"] as! String
+                print(name)
             }
-            print("Formulary count: " + String(count))
+//            let enumerator = snapshot.children
+//            while let rest = enumerator.nextObject() as? FIRDataSnapshot {
+////                print(rest.value!)
+//                let name = rest.value(forKey: "primaryName")
+//                print(name!)
+//            }
+            //TODO can not put here because of the 3 calls. need to check they are all done before moving on
             self.performSegue(withIdentifier: "MainNavControllerSeque", sender: nil)
         })
     }
