@@ -34,11 +34,11 @@ class LaunchViewController: UIViewController {
                 count += 1
             }
             print("Formulary count: " + String(count))
+            self.performSegue(withIdentifier: "MainNavControllerSeque", sender: nil)
         })
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        performSegue(withIdentifier: "MainNavControllerSeque", sender: nil)
     }
     
     override func didReceiveMemoryWarning() {

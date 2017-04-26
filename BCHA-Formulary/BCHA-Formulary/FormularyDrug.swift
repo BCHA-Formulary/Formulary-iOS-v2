@@ -9,35 +9,37 @@
 import Foundation
 
 class FormularyDrug:DrugBase{
-    var primaryName:String
-    var nameType:NameType
-    var alternateName = [String]()
     var strengths = [String]()
     
-    init(primaryName:String, nameType:NameType, alternateName:[String], strengths:[String], status:Status, drugClass:String){
-        self.primaryName = primaryName
-        self.nameType = nameType
-        self.alternateName = alternateName
+    init(primaryName:String, nameType:NameType, alternateNames:[String], status:Status, drugClass:[String], strengths:[String]){
         self.strengths = strengths
-        super.init(drugClass:drugClass, status: status)
+        super.init(primaryName: primaryName, nameType: nameType, alternateNames: alternateNames, drugClass: drugClass, status: status)
     }
     
-    init(primaryName:String, nameType:NameType, alternateName:String, strengths:String, status:Status, drugClass:String){
-        self.primaryName = primaryName
-        self.nameType = nameType
-        self.alternateName.append(alternateName)
-        self.strengths.append(strengths)
-        super.init(drugClass:drugClass, status: status)
-    }
-    
-    init(primaryName:String, nameType:NameType, alternateName:[String], strengths:[String], status:Status, drugClass:[String]){
-        self.primaryName = primaryName
-        self.nameType = nameType
-        self.alternateName = alternateName
-        self.strengths = strengths
-        super.init(drugClass:drugClass, status: status)
-    }
-    
+//    init(primaryName:String, nameType:NameType, alternateName:[String], strengths:[String], status:Status, drugClass:String){
+//        self.primaryName = primaryName
+//        self.nameType = nameType
+//        self.alternateName = alternateName
+//        self.strengths = strengths
+//        super.init(drugClass:drugClass, status: status)
+//    }
+//    
+//    init(primaryName:String, nameType:NameType, alternateName:String, strengths:String, status:Status, drugClass:String){
+//        self.primaryName = primaryName
+//        self.nameType = nameType
+//        self.alternateName.append(alternateName)
+//        self.strengths.append(strengths)
+//        super.init(drugClass:drugClass, status: status)
+//    }
+//    
+//    init(primaryName:String, nameType:NameType, alternateName:[String], strengths:[String], status:Status, drugClass:[String]){
+//        self.primaryName = primaryName
+//        self.nameType = nameType
+//        self.alternateName = alternateName
+//        self.strengths = strengths
+//        super.init(drugClass:drugClass, status: status)
+//    }
+//    
 //    init(json:JSON){
 //        self.primaryName = json["primaryName"].stringValue
 //        self.alternateName = json["alternateNames"].arrayObject as! [String]
