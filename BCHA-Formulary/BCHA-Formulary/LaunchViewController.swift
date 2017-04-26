@@ -17,14 +17,24 @@ class LaunchViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         ref = FIRDatabase.database().reference()
-        ref.child("message").observeSingleEvent(of: .value, with: { (snapshot) in
-            //DO STUFF HERE
-            let v = snapshot.value as! String
-            print(v)
-            
-        })  { (error) in
-            print(error.localizedDescription)
-        }
+//        ref.child("message").observeSingleEvent(of: .value, with: { (snapshot) in
+//            //DO STUFF HERE
+//            let v = snapshot.value as! String
+//            print(v)
+//            
+//        })  { (error) in
+//            print(error.localizedDescription)
+//        }
+//        ref.child("Formulary").observe(.childAdded, with: { (snapshot) -> Void in
+//            print(snapshot.value as! String)
+//        })
+        var count = 0
+        ref.child("Formulary").observe(.value, with: { snapshot in
+            for _ in snapshot.children {
+                count += 1
+            }
+            print("Formulary count: " + String(count))
+        })
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
