@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import FirebaseDatabase
+import CoreData
 
 class LaunchViewController: UIViewController {
     var ref: FIRDatabaseReference!
@@ -24,6 +25,7 @@ class LaunchViewController: UIViewController {
         //Get Excluded endpoint drug objects
         ref.child("Excluded").observe(.value, with: { snapshot in
             var excludedCount = 0
+            var excludedDrugs = [DrugBase]()
             for drugObj in snapshot.children {
                 let drugProp = (drugObj as! FIRDataSnapshot).value as! NSDictionary
                 
@@ -48,11 +50,16 @@ class LaunchViewController: UIViewController {
                 let eDrug = ExcludedDrug.init(primaryName: pName, nameType: nType, alternateNames: altNames, criteria: crit, status: Status.EXCLUDED, drugClass: drugClass)
                 
                 self.drugList.append(eDrug)
+                excludedDrugs.append(eDrug) //TODO testing - remove later
                 excludedCount += 1
             }
             //done loading all objects
             self.completedCount += 1
             print("Excluded drug count:" + String(excludedCount))
+            //TODO - testing core data
+//            self.saveToDrugTable(drugList: excludedDrugs)
+//            self.deleteEntries(entityTableName:"DrugTable")
+            self.fetchByAttribute(entityTableName: "DrugTable")
             //TODO can not put here because of the 3 calls. need to check they are all done before moving on
             if (self.completedCount == 3){
                 self.performSegue(withIdentifier: "MainNavControllerSeque", sender: nil)
@@ -159,5 +166,62 @@ class LaunchViewController: UIViewController {
             }
         }
         return stringArr
+    }
+    
+    func saveToDrugTable(drugList:[DrugBase]) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
+        
+        
+        for drugObj in drugList {
+            print("Attemting to save:" + drugObj.primaryName)
+            for dClass in drugObj.drugClass {
+                let newDrugTable = NSEntityDescription.insertNewObject(forEntityName: "DrugTable", into: context)
+                newDrugTable.setValue(drugObj.primaryName, forKey: "name")
+                newDrugTable.setValue(drugObj.nameType.rawValue, forKey: "nameType")
+                newDrugTable.setValue(drugObj.status.rawValue, forKey: "status")
+                newDrugTable.setValue(dClass, forKey: "drugClass")
+                do {
+                    try context.save()
+                }
+                catch {
+                    print("Could not save:" + drugObj.primaryName)
+                }
+            }
+            
+        }
+    }
+    
+    func deleteEntries(entityTableName:String) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName:entityTableName)
+        let request = NSBatchDeleteRequest(fetchRequest: fetch)
+        do {
+            try context.execute(request)
+        }catch {
+            print("Could not delete entities")
+        }
+    }
+    
+    func fetchByAttribute(entityTableName:String){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName:entityTableName)
+        
+        fetchReq.predicate = NSPredicate(format: "nameType = %@", NameType.BRAND.rawValue)
+        fetchReq.returnsObjectsAsFaults = false //see the results as you put into core data
+        
+        do {
+            let fetchedDrugs = try context.fetch(fetchReq)
+            
+            if fetchedDrugs.count > 0 {
+                print("Brand count" + String(fetchedDrugs.count))
+            }
+        } catch {
+            print("Could not fetch drug")
+        }
     }
 }
