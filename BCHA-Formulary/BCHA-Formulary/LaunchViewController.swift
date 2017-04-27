@@ -31,7 +31,8 @@ class LaunchViewController: UIViewController {
                 //up to date, no action needed
             } else {
                 // update needed
-                //TODO drop old entries
+                self.coreDataHelper.removeOutdatedEntities()
+                self.coreDataHelper.saveFirebaseDrugListUpdate(masterDrugList: firebaseDrugList)
                 //TODO save new drug list to core data
                 print("Number of drugs to update: " + String(firebaseDrugList.count))
             }

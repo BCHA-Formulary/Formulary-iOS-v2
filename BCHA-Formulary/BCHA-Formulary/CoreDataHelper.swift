@@ -50,10 +50,10 @@ class CoreDataHelper {
             print("Attemting to save:" + drugObj.primaryName)
             for dClass in drugObj.drugClass {
                 let newDrugTable = NSEntityDescription.insertNewObject(forEntityName: "DrugTable", into: context)
-                newDrugTable.setValue(drugObj.primaryName, forKey: "name")
+                newDrugTable.setValue(drugObj.primaryName.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines), forKey: "name")
                 newDrugTable.setValue(drugObj.nameType.rawValue, forKey: "nameType")
                 newDrugTable.setValue(drugObj.status.rawValue, forKey: "status")
-                newDrugTable.setValue(dClass, forKey: "drugClass")
+                newDrugTable.setValue(dClass.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines), forKey: "drugClass")
                 do {
                     try context.save()
                 }
@@ -62,6 +62,41 @@ class CoreDataHelper {
                 }
             }
             
+        }
+    }
+    
+    func removeOutdatedEntities(){
+        deleteEntries(entityTableName: "DrugTable")
+        deleteEntries(entityTableName: "FormularyGeneric")
+        deleteEntries(entityTableName: "FormularyBrand")
+        deleteEntries(entityTableName: "ExcludedGeneric")
+        deleteEntries(entityTableName: "ExcludedBrand")
+        deleteEntries(entityTableName: "RestrictedGeneric")
+        deleteEntries(entityTableName: "RestrictedBrand")
+    }
+    
+    func saveFirebaseDrugListUpdate(masterDrugList:[DrugBase]){
+        print("Attempting to save:" + String(masterDrugList.count))
+        for drugEntity in masterDrugList {
+            addToDrugTable(drug: drugEntity)
+        }
+    }
+    
+    func addToDrugTable(drug:DrugBase) {
+        //for every drug class
+        for dClass in drug.drugClass {
+            //primary name save. The master list contains generic and brand names in individual drug objects. Do not save the alternate names here
+            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "DrugTable", into: context)
+            drugEntity.setValue(drug.primaryName, forKey: "name")
+            drugEntity.setValue(drug.nameType.rawValue, forKey: "nameType")
+            drugEntity.setValue(drug.status.rawValue, forKey: "status")
+            drugEntity.setValue(dClass, forKey: "drugClass")
+            do {
+                try context.save()
+            }
+            catch {
+                print("Could not save: " + drug.primaryName)
+            }
         }
     }
     
