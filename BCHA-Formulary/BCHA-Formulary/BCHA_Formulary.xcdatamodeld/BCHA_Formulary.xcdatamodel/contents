@@ -9,30 +9,30 @@
     <entity name="ExcludedBrand" representedClassName="ExcludedBrand" syncable="YES" codeGenerationType="class">
         <attribute name="brandName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="criteria" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="genericName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="genericName" optional="YES" attributeType="Transformable" syncable="YES"/>
     </entity>
     <entity name="ExcludedGeneric" representedClassName="ExcludedGeneric" syncable="YES" codeGenerationType="class">
-        <attribute name="brandName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="brandName" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="criteria" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="genericName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="FormularyBrand" representedClassName="FormularyBrand" syncable="YES" codeGenerationType="class">
         <attribute name="brandName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="genericName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="genericName" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="strength" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="FormularyGeneric" representedClassName="FormularyGeneric" syncable="YES" codeGenerationType="class">
-        <attribute name="brandName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="brandName" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="genericName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="strength" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="RestrictedBrand" representedClassName="RestrictedBrand" syncable="YES" codeGenerationType="class">
         <attribute name="brandName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="criteria" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="genericName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="genericName" optional="YES" attributeType="Transformable" syncable="YES"/>
     </entity>
     <entity name="RestrictedGeneric" representedClassName="RestrictedGeneric" syncable="YES" codeGenerationType="class">
-        <attribute name="brandName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="brandName" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="criteria" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="genericName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
