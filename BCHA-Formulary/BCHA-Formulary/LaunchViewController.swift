@@ -33,9 +33,9 @@ class LaunchViewController: UIViewController {
                 //TODO save new drug list to core data
                 print("Number of drugs to update: " + String(firebaseDrugList.count))
             }
-        }) //blackbox update from firebase if needed
+            self.performSegue(withIdentifier: "MainNavControllerSeque", sender: nil)
+        })
         
-        self.performSegue(withIdentifier: "MainNavControllerSeque", sender: nil)
 //        //Set firebase for retrieve data
 //        ref = FIRDatabase.database().reference()
 //        //Get Excluded endpoint drug objects
@@ -166,21 +166,5 @@ class LaunchViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    /*
-     *   Due to the nature of adding/deleting firebase array elements, the indexing of some lists
-     *   may include some elements in the NSArray which are NSNull, these are elements we do NOT
-     *   want to include in our objects and tables so are filtered out before creating them
-     */
-    //TODO move this function to a better place
-    func trimNSNull(arr:NSMutableArray) -> [String] {
-        var stringArr = [String]()
-        for element in arr {
-            if let e  = element as? String {
-                stringArr.append(e)
-            }
-        }
-        return stringArr
     }
 }
