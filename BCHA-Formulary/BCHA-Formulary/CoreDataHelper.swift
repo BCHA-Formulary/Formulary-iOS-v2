@@ -78,7 +78,7 @@ class CoreDataHelper {
     func saveFirebaseDrugListUpdate(masterDrugList:[DrugBase]){
         print("Attempting to save:" + String(masterDrugList.count))
         for drugEntity in masterDrugList {
-            //            addToDrugTable(drug: drugEntity)
+            addToDrugTable(drug: drugEntity)
             
             if (drugEntity.status == Status.FORMULARY) {
                 addToFormularyTable(drug: drugEntity as! FormularyDrug)
@@ -110,26 +110,23 @@ class CoreDataHelper {
     
     func addToFormularyTable(drug:FormularyDrug){
         let pName = drug.primaryName.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        for str in drug.strengths {
-            let strength = str.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-            
-            if (drug.nameType == NameType.GENERIC){
-                let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "FormularyGeneric", into: context)
-                drugEntity.setValue(pName, forKey: "genericName")
-                drugEntity.setValue(drug.alternateNames as [NSString], forKey: "brandName")
-                drugEntity.setValue(strength, forKey: "strength")
-            } else {
-                let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "FormularyBrand", into: context)
-                drugEntity.setValue(pName, forKey: "brandName")
-                drugEntity.setValue(drug.alternateNames as [NSString], forKey: "genericName")
-                drugEntity.setValue(strength, forKey: "strength")
-            }
-            do {
-                try context.save()
-            }
-            catch {
-                print("Could not save: " + drug.primaryName + " into Formulary")
-            }
+        
+        if (drug.nameType == NameType.GENERIC){
+            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "FormularyGeneric", into: context)
+            drugEntity.setValue(pName, forKey: "genericName")
+            drugEntity.setValue(drug.alternateNames as [NSString], forKey: "brandName")
+            drugEntity.setValue(drug.strengths as [NSString], forKey: "strength")
+        } else {
+            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "FormularyBrand", into: context)
+            drugEntity.setValue(pName, forKey: "brandName")
+            drugEntity.setValue(drug.alternateNames as [NSString], forKey: "genericName")
+            drugEntity.setValue(drug.strengths as [NSString], forKey: "strength")
+        }
+        do {
+            try context.save()
+        }
+        catch {
+            print("Could not save: " + drug.primaryName + " into Formulary")
         }
     }
     
