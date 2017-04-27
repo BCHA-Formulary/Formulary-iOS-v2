@@ -8,13 +8,13 @@
     </entity>
     <entity name="ExcludedBrand" representedClassName="ExcludedBrand" syncable="YES" codeGenerationType="class">
         <attribute name="brandName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="criteria" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="genericName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="reason" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="ExcludedGeneric" representedClassName="ExcludedGeneric" syncable="YES" codeGenerationType="class">
         <attribute name="brandName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="criteria" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="genericName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="reason" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="FormularyBrand" representedClassName="FormularyBrand" syncable="YES" codeGenerationType="class">
         <attribute name="brandName" optional="YES" attributeType="String" syncable="YES"/>
@@ -28,13 +28,13 @@
     </entity>
     <entity name="RestrictedBrand" representedClassName="RestrictedBrand" syncable="YES" codeGenerationType="class">
         <attribute name="brandName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="criteria" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="genericName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="reason" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="RestrictedGeneric" representedClassName="RestrictedGeneric" syncable="YES" codeGenerationType="class">
         <attribute name="brandName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="criteria" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="genericName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="reason" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="UpdatedLog" representedClassName="UpdatedLog" syncable="YES" codeGenerationType="class">
         <attribute name="lastUpdated" optional="YES" attributeType="String" syncable="YES"/>
