@@ -19,6 +19,7 @@
 		AF7772AB1EB0157300E20590 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF7772AA1EB0157300E20590 /* GoogleService-Info.plist */; };
 		AFD7821F1EB1404E00ED7E9B /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD7821E1EB1404E00ED7E9B /* FirebaseHelper.swift */; };
 		AFD782211EB14C5400ED7E9B /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD782201EB14C5400ED7E9B /* CoreDataHelper.swift */; };
+		AFD782231EB2B69E00ED7E9B /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD782221EB2B69E00ED7E9B /* StringHelper.swift */; };
 		AFDD388C1EAFFE0300908BAC /* DrugBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDD38861EAFFE0200908BAC /* DrugBase.swift */; };
 		AFDD388D1EAFFE0300908BAC /* ExcludedDrug.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDD38871EAFFE0200908BAC /* ExcludedDrug.swift */; };
 		AFDD388E1EAFFE0300908BAC /* FormularyDrug.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDD38881EAFFE0200908BAC /* FormularyDrug.swift */; };
@@ -58,6 +59,7 @@
 		AF7772AA1EB0157300E20590 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AFD7821E1EB1404E00ED7E9B /* FirebaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		AFD782201EB14C5400ED7E9B /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		AFD782221EB2B69E00ED7E9B /* StringHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
 		AFDD38861EAFFE0200908BAC /* DrugBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugBase.swift; sourceTree = "<group>"; };
 		AFDD38871EAFFE0200908BAC /* ExcludedDrug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcludedDrug.swift; sourceTree = "<group>"; };
 		AFDD38881EAFFE0200908BAC /* FormularyDrug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormularyDrug.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				AF241CB41EAFFD6A00081307 /* Enums */,
 				AF241CB31EAFFD5E00081307 /* DrugModels */,
+				AFD782221EB2B69E00ED7E9B /* StringHelper.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				AFDD388E1EAFFE0300908BAC /* FormularyDrug.swift in Sources */,
 				AFDD38901EAFFE0300908BAC /* RestrictedDrug.swift in Sources */,
 				AF59AFB31EAFE882002D06DD /* MainViewController.swift in Sources */,
+				AFD782231EB2B69E00ED7E9B /* StringHelper.swift in Sources */,
 				AFDD388C1EAFFE0300908BAC /* DrugBase.swift in Sources */,
 				AFD782211EB14C5400ED7E9B /* CoreDataHelper.swift in Sources */,
 				AFDD38911EAFFE0300908BAC /* Status.swift in Sources */,

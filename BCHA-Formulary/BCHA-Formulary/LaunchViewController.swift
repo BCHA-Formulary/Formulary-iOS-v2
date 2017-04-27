@@ -23,16 +23,19 @@ class LaunchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let lastUpdate = coreDataHelper.lastUpdated()
+        var lastUpdate:String = ""
+        if (UserDefaults.standard.string(forKey: StringHelper.LAST_UPDATE_KEY) != nil) {
+            lastUpdate = UserDefaults.standard.string(forKey: StringHelper.LAST_UPDATE_KEY)!
+        }
         
         firebaseHelper = FirebaseHelper.init()
-        firebaseHelper.updateAllEntries(lastUpdated: lastUpdate, completionHandler: { firebaseDrugList in
+        firebaseHelper.updateAllEntries(lastUpdated: lastUpdate, completionHandler: { firebaseDrugList, firebaseUpdate in
             if (firebaseDrugList.count == 0) {
                 //up to date, no action needed
             } else {
                 // update needed
                 self.coreDataHelper.removeOutdatedEntities()
-                self.coreDataHelper.saveFirebaseDrugListUpdate(masterDrugList: firebaseDrugList)
+                self.coreDataHelper.saveFirebaseDrugListUpdate(masterDrugList: firebaseDrugList, firebaseUpdateDate: firebaseUpdate)
                 //TODO save new drug list to core data
                 print("Number of drugs to update: " + String(firebaseDrugList.count))
             }

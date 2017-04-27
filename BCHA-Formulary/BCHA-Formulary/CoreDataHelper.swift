@@ -20,31 +20,6 @@ class CoreDataHelper {
         self.context = appDelegate.persistentContainer.viewContext
     }
     
-    /*
-     * Core Data Table: UpdatedLog
-     * Returns the last instance of the time the app was recorded to be updated.
-     * Returns "" if no record is found
-     */
-    func lastUpdated() -> String{
-        let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName:"UpdatedLog")
-        
-        fetchReq.returnsObjectsAsFaults = false //see the results as you put into core data
-        
-        do {
-            let fetchUpdate = try context.fetch(fetchReq) as! [String]
-            
-            if fetchUpdate.count > 0 {
-                print("Last updated: " + fetchUpdate[0])
-                return fetchUpdate[0]
-            } else {
-                print("No last updated found")
-            }
-        } catch {
-            print("Could not fetch update")
-        }
-        return ""
-    }
-    
     func saveToDrugTable(drugList:[DrugBase]) {
         for drugObj in drugList {
             print("Attemting to save:" + drugObj.primaryName)
@@ -75,7 +50,7 @@ class CoreDataHelper {
         deleteEntries(entityTableName: "RestrictedBrand")
     }
     
-    func saveFirebaseDrugListUpdate(masterDrugList:[DrugBase]){
+    func saveFirebaseDrugListUpdate(masterDrugList:[DrugBase], firebaseUpdateDate:String){
         print("Attempting to save:" + String(masterDrugList.count))
         for drugEntity in masterDrugList {
             addToDrugTable(drug: drugEntity)
@@ -88,6 +63,8 @@ class CoreDataHelper {
                 addToRestrictedTable(drug: drugEntity as! RestrictedDrug)
             }
         }
+        //all records saved, update app timestamp
+        saveUpdateLog(firebaseUpdate: firebaseUpdateDate)
     }
     
     func addToDrugTable(drug:DrugBase) {
@@ -184,6 +161,10 @@ class CoreDataHelper {
         }catch {
             print("Could not delete entities")
         }
+    }
+    
+    func saveUpdateLog(firebaseUpdate:String) {
+        UserDefaults.standard.set(firebaseUpdate, forKey: StringHelper.LAST_UPDATE_KEY)
     }
     
     func fetchByAttribute(entityTableName:String){

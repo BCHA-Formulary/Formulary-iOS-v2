@@ -17,23 +17,23 @@ class FirebaseHelper {
         ref = FIRDatabase.database().reference()
     }
     
-    func updateAllEntries(lastUpdated:String, completionHandler: @escaping ([DrugBase])->Void) {
-        if (lastUpdated == "") {
-            getFirebaseDrugList(updateCompleteHandler: completionHandler)
-        } else {
-            var firebaseLastUpdate:String = "none"
+    func updateAllEntries(lastUpdated:String, completionHandler: @escaping ([DrugBase], String)->Void) {
+        var firebaseLastUpdate:String = "none"
             ref.child("Update").observeSingleEvent(of: .value, with: {(snapshot) in
-                firebaseLastUpdate = snapshot.value as! String
+                firebaseLastUpdate = (snapshot.value as! NSString) as String
                 if(firebaseLastUpdate != lastUpdated) {
-                    self.getFirebaseDrugList(updateCompleteHandler: completionHandler)
+                    self.getFirebaseDrugList(firebaseUpdateDate: firebaseLastUpdate, updateCompleteHandler: completionHandler)
+                }
+                else {
+                    //all up to date!
+                    completionHandler([], "")
                 }
             }) { (error) in
                 print(error.localizedDescription)
             }
-        }
     }
     
-    func getFirebaseDrugList(updateCompleteHandler: @escaping ([DrugBase]) -> Void) {
+    func getFirebaseDrugList(firebaseUpdateDate:String, updateCompleteHandler: @escaping ([DrugBase], String) -> Void) {
         var firebaseUpdatedCount = 0 //things that have been sucessfully parsed
         var allDrugList = [DrugBase]()
 
@@ -41,7 +41,7 @@ class FirebaseHelper {
             allDrugList.append(contentsOf:formularyDrugList)
             firebaseUpdatedCount += 1
             if (firebaseUpdatedCount >= 3) {
-                updateCompleteHandler(allDrugList)
+                updateCompleteHandler(allDrugList, firebaseUpdateDate)
             }
         })
         
@@ -49,14 +49,14 @@ class FirebaseHelper {
             allDrugList.append(contentsOf:excludedDrugList)
             firebaseUpdatedCount += 1
             if (firebaseUpdatedCount >= 3) {
-                updateCompleteHandler(allDrugList)
+                updateCompleteHandler(allDrugList, firebaseUpdateDate)
             }
         })
         getRestrictedDrugList(completionHandler: {restrictedDrugList in
             allDrugList.append(contentsOf:restrictedDrugList)
             firebaseUpdatedCount += 1
             if (firebaseUpdatedCount >= 3) {
-                updateCompleteHandler(allDrugList)
+                updateCompleteHandler(allDrugList, firebaseUpdateDate)
             }
         })
     }
