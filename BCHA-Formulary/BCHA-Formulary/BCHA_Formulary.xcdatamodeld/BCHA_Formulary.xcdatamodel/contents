@@ -6,7 +6,11 @@
         <attribute name="nameType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="UpdatedLog" representedClassName="UpdatedLog" syncable="YES" codeGenerationType="class">
+        <attribute name="lastUpdated" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="DrugTable" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="UpdatedLog" positionX="-54" positionY="18" width="128" height="60"/>
     </elements>
 </model>
