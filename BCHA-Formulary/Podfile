@@ -9,6 +9,9 @@ target 'BCHA-Formulary' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
 
+  # Pod for ios-autocomplete text field
+  pod 'SearchTextField'
+
   target 'BCHA-FormularyTests' do
     inherit! :search_paths
     # Pods for testing

@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_BCHA_FormularyVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_BCHA_FormularyVersionString[];
+FOUNDATION_EXPORT double SearchTextFieldVersionNumber;
+FOUNDATION_EXPORT const unsigned char SearchTextFieldVersionString[];
 

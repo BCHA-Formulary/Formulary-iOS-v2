@@ -48,7 +48,7 @@
                                     <constraint firstItem="VTh-uK-c57" firstAttribute="top" secondItem="zwO-z4-3rH" secondAttribute="top" constant="30" id="aOk-cw-DfR"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search by generic or brand name" textAlignment="center" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8M3-YH-Bek" customClass="MPGTextField_Swift" customModule="BCHA_Formulary" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search by generic or brand name" textAlignment="center" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8M3-YH-Bek" customClass="SearchTextField" customModule="SearchTextField">
                                 <rect key="frame" x="70" y="285" width="460" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -71,34 +71,10 @@
                                     <constraint firstAttribute="height" constant="58" id="SSF-An-ZgM"/>
                                 </constraints>
                             </imageView>
-                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9gH-Dt-Z3t">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zki-Cy-0hV">
-                                        <rect key="frame" x="290" y="290" width="20" height="20"/>
-                                        <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </activityIndicatorView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Updating Formulary (Please be patient)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdL-mG-5dp">
-                                        <rect key="frame" x="8" y="388" width="584" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="zki-Cy-0hV" firstAttribute="centerY" secondItem="9gH-Dt-Z3t" secondAttribute="centerY" id="BQ9-6a-iKC"/>
-                                    <constraint firstItem="MdL-mG-5dp" firstAttribute="centerX" secondItem="zki-Cy-0hV" secondAttribute="centerX" id="DKQ-Nt-h4F"/>
-                                    <constraint firstItem="MdL-mG-5dp" firstAttribute="leading" secondItem="9gH-Dt-Z3t" secondAttribute="leadingMargin" id="DqM-5Z-2ha"/>
-                                    <constraint firstItem="MdL-mG-5dp" firstAttribute="top" secondItem="zki-Cy-0hV" secondAttribute="bottom" constant="78" id="V7v-Nj-okp"/>
-                                    <constraint firstItem="zki-Cy-0hV" firstAttribute="centerX" secondItem="9gH-Dt-Z3t" secondAttribute="centerX" id="cbc-e7-NJn"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2Ff-Wi-YgU" firstAttribute="top" secondItem="zwO-z4-3rH" secondAttribute="bottom" constant="8" symbolic="YES" id="2jS-j0-ghc"/>
-                            <constraint firstItem="9gH-Dt-Z3t" firstAttribute="top" secondItem="zwO-z4-3rH" secondAttribute="top" id="6JW-v0-iby"/>
                             <constraint firstItem="zwO-z4-3rH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6KB-A2-cay"/>
                             <constraint firstAttribute="trailing" secondItem="zwO-z4-3rH" secondAttribute="trailing" id="FU5-MT-G16"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8M3-YH-Bek" secondAttribute="trailing" constant="50" id="GJf-7F-TyO"/>
@@ -108,9 +84,6 @@
                             <constraint firstItem="zwO-z4-3rH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="i3i-uo-tGg"/>
                             <constraint firstAttribute="bottom" secondItem="Gjq-rf-IxT" secondAttribute="bottom" constant="20" symbolic="YES" id="jlD-6V-xa2"/>
                             <constraint firstItem="Gjq-rf-IxT" firstAttribute="centerX" secondItem="pF8-2B-dMT" secondAttribute="centerX" id="kgH-V4-tP1"/>
-                            <constraint firstItem="9gH-Dt-Z3t" firstAttribute="leading" secondItem="zwO-z4-3rH" secondAttribute="leading" id="kpm-CR-S1S"/>
-                            <constraint firstItem="9gH-Dt-Z3t" firstAttribute="trailing" secondItem="zwO-z4-3rH" secondAttribute="trailing" id="mhV-Gv-fHw"/>
-                            <constraint firstItem="9gH-Dt-Z3t" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="moL-eY-v5J"/>
                             <constraint firstItem="2Ff-Wi-YgU" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="nhZ-55-V9A"/>
                             <constraint firstItem="pF8-2B-dMT" firstAttribute="baseline" secondItem="8M3-YH-Bek" secondAttribute="baseline" constant="50" id="oph-P8-53k"/>
                             <constraint firstItem="8M3-YH-Bek" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="q3N-Qk-MK2"/>
@@ -119,6 +92,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Slh-zV-g4G"/>
+                    <connections>
+                        <outlet property="drugSearchTextField" destination="8M3-YH-Bek" id="UEc-lg-goI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
