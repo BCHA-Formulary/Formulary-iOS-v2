@@ -342,7 +342,8 @@ open class SearchTextField: UITextField {
                     
                     self.text = stringElements!.first! + filterAfter + firstElement.title
                 } else {
-                    self.text = firstElement.title
+                    //TODO modified because we want raw text to be the input if not found. Test
+//                    self.text = firstElement.title
                 }
             }
         }
