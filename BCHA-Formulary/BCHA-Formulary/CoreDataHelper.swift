@@ -20,28 +20,8 @@ class CoreDataHelper {
         self.context = appDelegate.persistentContainer.viewContext
     }
     
-    func saveToDrugTable(drugList:[DrugBase]) {
-        for drugObj in drugList {
-            print("Attemting to save:" + drugObj.primaryName)
-            for dClass in drugObj.drugClass {
-                let newDrugTable = NSEntityDescription.insertNewObject(forEntityName: "DrugTable", into: context)
-                newDrugTable.setValue(drugObj.primaryName.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines), forKey: "name")
-                newDrugTable.setValue(drugObj.nameType.rawValue, forKey: "nameType")
-                newDrugTable.setValue(drugObj.status.rawValue, forKey: "status")
-                newDrugTable.setValue(dClass.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines), forKey: "drugClass")
-                do {
-                    try context.save()
-                }
-                catch {
-                    print("Could not save:" + drugObj.primaryName)
-                }
-            }
-            
-        }
-    }
-    
     func removeOutdatedEntities(){
-        deleteEntries(entityTableName: "DrugTable")
+        deleteEntries(entityTableName: StringHelper.DRUG_ENTRY_TABLE)
         deleteEntries(entityTableName: "FormularyGeneric")
         deleteEntries(entityTableName: "FormularyBrand")
         deleteEntries(entityTableName: "ExcludedGeneric")
@@ -71,16 +51,16 @@ class CoreDataHelper {
         //for every drug class
         for dClass in drug.drugClass {
             //primary name save. The master list contains generic and brand names in individual drug objects. Do not save the alternate names here
-            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "DrugTable", into: context)
-            drugEntity.setValue(drug.primaryName, forKey: "name")
-            drugEntity.setValue(drug.nameType.rawValue, forKey: "nameType")
-            drugEntity.setValue(drug.status.rawValue, forKey: "status")
-            drugEntity.setValue(dClass, forKey: "drugClass")
+            let drugEntry = NSEntityDescription.insertNewObject(forEntityName: StringHelper.DRUG_ENTRY_TABLE, into: context) as! DrugEntry
+            drugEntry.name = drug.primaryName.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            drugEntry.nameType = drug.nameType.rawValue
+            drugEntry.status = drug.status.rawValue
+            drugEntry.drugClass = getDrugClassIfExist(drugClassName: dClass.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))
             do {
                 try context.save()
             }
             catch {
-                print("Could not save: " + drug.primaryName)
+                print("Could not save:" + drug.primaryName)
             }
         }
     }
@@ -182,5 +162,47 @@ class CoreDataHelper {
         } catch {
             print("Could not fetch drug")
         }
+    }
+    
+    func getDrugClassIfExist(drugClassName:String) -> DrugClass {
+        let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName:StringHelper.DRUG_CLASS_TABLE)
+        fetchReq.returnsObjectsAsFaults = false
+        fetchReq.predicate = NSPredicate(format: "drugClass = %@", drugClassName)
+        
+        var dClass:DrugClass
+        do {
+            let fetchedClass = try context.fetch(fetchReq)
+            if (fetchedClass.count > 0){
+                dClass = fetchedClass[0] as! DrugClass
+            } else {
+                dClass = NSEntityDescription.insertNewObject(forEntityName: StringHelper.DRUG_CLASS_TABLE, into: context) as! DrugClass
+                dClass.drugClass = drugClassName
+            }
+        } catch {
+            dClass = NSEntityDescription.insertNewObject(forEntityName: StringHelper.DRUG_CLASS_TABLE, into: context) as! DrugClass
+            dClass.drugClass = drugClassName
+        }
+        return dClass
+    }
+    
+    func getAllDrugNames() -> [String] {
+        var drugNames = Set<String>()
+        let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName:StringHelper.DRUG_ENTRY_TABLE)
+        fetchReq.returnsObjectsAsFaults = false
+        do {
+            let fetchedDrugs = try context.fetch(fetchReq)
+            if(fetchedDrugs.count > 0){
+                for drug in fetchedDrugs as! [DrugEntry]{
+                    drugNames.insert(drug.name!)
+                }
+            } else {
+                print("Could not find any drugs")
+                //TODO throw error reload drugs
+            }
+        } catch {
+            print("Could not get any drugs")
+            //TODO Throw error reload drugs
+        }
+        return Array(drugNames)
     }
 }

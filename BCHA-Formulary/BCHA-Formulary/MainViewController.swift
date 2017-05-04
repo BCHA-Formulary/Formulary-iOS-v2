@@ -10,12 +10,14 @@ import UIKit
 import SearchTextField
 
 class MainViewController: UIViewController {
+    let core = CoreDataHelper.coreMain
     @IBOutlet weak var drugSearchTextField: SearchTextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        let drugNames = core.getAllDrugNames()
+        drugSearchTextField.filterStrings(drugNames)
     }
     
     override func viewWillAppear(_ animated: Bool) {

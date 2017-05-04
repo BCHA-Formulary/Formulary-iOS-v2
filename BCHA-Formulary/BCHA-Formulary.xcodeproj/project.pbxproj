@@ -9,6 +9,22 @@
 /* Begin PBXBuildFile section */
 		0732525FD9DE098528BB1C6D /* Pods_BCHA_Formulary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EC832AA75E3C69084A7C27 /* Pods_BCHA_Formulary.framework */; };
 		6279E7EA6582993D180C9A9D /* Pods_BCHA_FormularyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A120226E75C64C6105B82E9 /* Pods_BCHA_FormularyTests.framework */; };
+		AF519F111EBB9CAE00385A4C /* RestrictedBrand+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F011EBB9CAE00385A4C /* RestrictedBrand+CoreDataClass.swift */; };
+		AF519F121EBB9CAE00385A4C /* RestrictedBrand+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F021EBB9CAE00385A4C /* RestrictedBrand+CoreDataProperties.swift */; };
+		AF519F131EBB9CAE00385A4C /* FormularyGeneric+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F031EBB9CAE00385A4C /* FormularyGeneric+CoreDataClass.swift */; };
+		AF519F141EBB9CAE00385A4C /* FormularyGeneric+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F041EBB9CAE00385A4C /* FormularyGeneric+CoreDataProperties.swift */; };
+		AF519F151EBB9CAE00385A4C /* ExcludedGeneric+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F051EBB9CAE00385A4C /* ExcludedGeneric+CoreDataClass.swift */; };
+		AF519F161EBB9CAE00385A4C /* ExcludedGeneric+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F061EBB9CAE00385A4C /* ExcludedGeneric+CoreDataProperties.swift */; };
+		AF519F171EBB9CAE00385A4C /* ExcludedBrand+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F071EBB9CAE00385A4C /* ExcludedBrand+CoreDataClass.swift */; };
+		AF519F181EBB9CAE00385A4C /* ExcludedBrand+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F081EBB9CAE00385A4C /* ExcludedBrand+CoreDataProperties.swift */; };
+		AF519F1B1EBB9CAE00385A4C /* FormularyBrand+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F0B1EBB9CAE00385A4C /* FormularyBrand+CoreDataClass.swift */; };
+		AF519F1C1EBB9CAE00385A4C /* FormularyBrand+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F0C1EBB9CAE00385A4C /* FormularyBrand+CoreDataProperties.swift */; };
+		AF519F1D1EBB9CAE00385A4C /* RestrictedGeneric+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F0D1EBB9CAE00385A4C /* RestrictedGeneric+CoreDataClass.swift */; };
+		AF519F1E1EBB9CAE00385A4C /* RestrictedGeneric+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F0E1EBB9CAE00385A4C /* RestrictedGeneric+CoreDataProperties.swift */; };
+		AF519F291EBBA29C00385A4C /* DrugClass+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F251EBBA29C00385A4C /* DrugClass+CoreDataClass.swift */; };
+		AF519F2A1EBBA29C00385A4C /* DrugClass+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F261EBBA29C00385A4C /* DrugClass+CoreDataProperties.swift */; };
+		AF519F2B1EBBA29C00385A4C /* DrugEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F271EBBA29C00385A4C /* DrugEntry+CoreDataClass.swift */; };
+		AF519F2C1EBBA29C00385A4C /* DrugEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F281EBBA29C00385A4C /* DrugEntry+CoreDataProperties.swift */; };
 		AF59AFB11EAFE882002D06DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59AFB01EAFE882002D06DD /* AppDelegate.swift */; };
 		AF59AFB31EAFE882002D06DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59AFB21EAFE882002D06DD /* MainViewController.swift */; };
 		AF59AFB61EAFE882002D06DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF59AFB41EAFE882002D06DD /* Main.storyboard */; };
@@ -45,6 +61,22 @@
 		7A120226E75C64C6105B82E9 /* Pods_BCHA_FormularyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BCHA_FormularyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DA96075E98599101E92100A /* Pods-BCHA-FormularyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCHA-FormularyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BCHA-FormularyTests/Pods-BCHA-FormularyTests.release.xcconfig"; sourceTree = "<group>"; };
 		94EC832AA75E3C69084A7C27 /* Pods_BCHA_Formulary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BCHA_Formulary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF519F011EBB9CAE00385A4C /* RestrictedBrand+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestrictedBrand+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AF519F021EBB9CAE00385A4C /* RestrictedBrand+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestrictedBrand+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AF519F031EBB9CAE00385A4C /* FormularyGeneric+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FormularyGeneric+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AF519F041EBB9CAE00385A4C /* FormularyGeneric+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FormularyGeneric+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AF519F051EBB9CAE00385A4C /* ExcludedGeneric+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExcludedGeneric+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AF519F061EBB9CAE00385A4C /* ExcludedGeneric+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExcludedGeneric+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AF519F071EBB9CAE00385A4C /* ExcludedBrand+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExcludedBrand+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AF519F081EBB9CAE00385A4C /* ExcludedBrand+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExcludedBrand+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AF519F0B1EBB9CAE00385A4C /* FormularyBrand+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FormularyBrand+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AF519F0C1EBB9CAE00385A4C /* FormularyBrand+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FormularyBrand+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AF519F0D1EBB9CAE00385A4C /* RestrictedGeneric+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestrictedGeneric+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AF519F0E1EBB9CAE00385A4C /* RestrictedGeneric+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestrictedGeneric+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AF519F251EBBA29C00385A4C /* DrugClass+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DrugClass+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AF519F261EBBA29C00385A4C /* DrugClass+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DrugClass+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AF519F271EBBA29C00385A4C /* DrugEntry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DrugEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AF519F281EBBA29C00385A4C /* DrugEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DrugEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AF59AFAD1EAFE882002D06DD /* BCHA-Formulary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BCHA-Formulary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF59AFB01EAFE882002D06DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF59AFB21EAFE882002D06DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +125,7 @@
 		AF241CB21EAFFD5400081307 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AF519EE01EBB9C4600385A4C /* CoreModels */,
 				AF241CB41EAFFD6A00081307 /* Enums */,
 				AF241CB31EAFFD5E00081307 /* DrugModels */,
 				AFD782221EB2B69E00ED7E9B /* StringHelper.swift */,
@@ -118,6 +151,29 @@
 				AFDD388B1EAFFE0300908BAC /* Status.swift */,
 			);
 			name = Enums;
+			sourceTree = "<group>";
+		};
+		AF519EE01EBB9C4600385A4C /* CoreModels */ = {
+			isa = PBXGroup;
+			children = (
+				AF519F251EBBA29C00385A4C /* DrugClass+CoreDataClass.swift */,
+				AF519F261EBBA29C00385A4C /* DrugClass+CoreDataProperties.swift */,
+				AF519F271EBBA29C00385A4C /* DrugEntry+CoreDataClass.swift */,
+				AF519F281EBBA29C00385A4C /* DrugEntry+CoreDataProperties.swift */,
+				AF519F011EBB9CAE00385A4C /* RestrictedBrand+CoreDataClass.swift */,
+				AF519F021EBB9CAE00385A4C /* RestrictedBrand+CoreDataProperties.swift */,
+				AF519F031EBB9CAE00385A4C /* FormularyGeneric+CoreDataClass.swift */,
+				AF519F041EBB9CAE00385A4C /* FormularyGeneric+CoreDataProperties.swift */,
+				AF519F051EBB9CAE00385A4C /* ExcludedGeneric+CoreDataClass.swift */,
+				AF519F061EBB9CAE00385A4C /* ExcludedGeneric+CoreDataProperties.swift */,
+				AF519F071EBB9CAE00385A4C /* ExcludedBrand+CoreDataClass.swift */,
+				AF519F081EBB9CAE00385A4C /* ExcludedBrand+CoreDataProperties.swift */,
+				AF519F0B1EBB9CAE00385A4C /* FormularyBrand+CoreDataClass.swift */,
+				AF519F0C1EBB9CAE00385A4C /* FormularyBrand+CoreDataProperties.swift */,
+				AF519F0D1EBB9CAE00385A4C /* RestrictedGeneric+CoreDataClass.swift */,
+				AF519F0E1EBB9CAE00385A4C /* RestrictedGeneric+CoreDataProperties.swift */,
+			);
+			name = CoreModels;
 			sourceTree = "<group>";
 		};
 		AF59AFA41EAFE882002D06DD = {
@@ -409,18 +465,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF519F291EBBA29C00385A4C /* DrugClass+CoreDataClass.swift in Sources */,
+				AF519F1D1EBB9CAE00385A4C /* RestrictedGeneric+CoreDataClass.swift in Sources */,
+				AF519F111EBB9CAE00385A4C /* RestrictedBrand+CoreDataClass.swift in Sources */,
+				AF519F131EBB9CAE00385A4C /* FormularyGeneric+CoreDataClass.swift in Sources */,
 				AF59AFB91EAFE882002D06DD /* BCHA_Formulary.xcdatamodeld in Sources */,
+				AF519F121EBB9CAE00385A4C /* RestrictedBrand+CoreDataProperties.swift in Sources */,
 				AF7772A81EB00BAC00E20590 /* LaunchViewController.swift in Sources */,
 				AFDD388E1EAFFE0300908BAC /* FormularyDrug.swift in Sources */,
+				AF519F2B1EBBA29C00385A4C /* DrugEntry+CoreDataClass.swift in Sources */,
+				AF519F181EBB9CAE00385A4C /* ExcludedBrand+CoreDataProperties.swift in Sources */,
 				AFDD38901EAFFE0300908BAC /* RestrictedDrug.swift in Sources */,
+				AF519F161EBB9CAE00385A4C /* ExcludedGeneric+CoreDataProperties.swift in Sources */,
 				AF59AFB31EAFE882002D06DD /* MainViewController.swift in Sources */,
+				AF519F1E1EBB9CAE00385A4C /* RestrictedGeneric+CoreDataProperties.swift in Sources */,
+				AF519F141EBB9CAE00385A4C /* FormularyGeneric+CoreDataProperties.swift in Sources */,
 				AFD782231EB2B69E00ED7E9B /* StringHelper.swift in Sources */,
+				AF519F1B1EBB9CAE00385A4C /* FormularyBrand+CoreDataClass.swift in Sources */,
 				AFDD388C1EAFFE0300908BAC /* DrugBase.swift in Sources */,
 				AFD782211EB14C5400ED7E9B /* CoreDataHelper.swift in Sources */,
 				AFDD38911EAFFE0300908BAC /* Status.swift in Sources */,
+				AF519F151EBB9CAE00385A4C /* ExcludedGeneric+CoreDataClass.swift in Sources */,
+				AF519F171EBB9CAE00385A4C /* ExcludedBrand+CoreDataClass.swift in Sources */,
 				AFDD388D1EAFFE0300908BAC /* ExcludedDrug.swift in Sources */,
 				AFDD388F1EAFFE0300908BAC /* NameType.swift in Sources */,
 				AFD7821F1EB1404E00ED7E9B /* FirebaseHelper.swift in Sources */,
+				AF519F2A1EBBA29C00385A4C /* DrugClass+CoreDataProperties.swift in Sources */,
+				AF519F1C1EBB9CAE00385A4C /* FormularyBrand+CoreDataProperties.swift in Sources */,
+				AF519F2C1EBBA29C00385A4C /* DrugEntry+CoreDataProperties.swift in Sources */,
 				AF59AFB11EAFE882002D06DD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
