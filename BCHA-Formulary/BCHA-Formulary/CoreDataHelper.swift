@@ -74,10 +74,13 @@ class CoreDataHelper {
             drugEntity.brandName = drug.alternateNames as [NSString]
             drugEntity.strength = drug.strengths as [NSString]
         } else {
-            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "FormularyBrand", into: context)
-            drugEntity.setValue(pName, forKey: "brandName")
-            drugEntity.setValue(drug.alternateNames as [NSString], forKey: "genericName")
-            drugEntity.setValue(drug.strengths as [NSString], forKey: "strength")
+            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "FormularyBrand", into: context) as! FormularyBrand
+            drugEntity.brandName = pName
+            drugEntity.genericName = drug.alternateNames as [NSString]
+            drugEntity.strength = drug.strengths as [NSString]
+//            drugEntity.setValue(pName, forKey: "brandName")
+//            drugEntity.setValue(drug.alternateNames as [NSString], forKey: "genericName")
+//            drugEntity.setValue(drug.strengths as [NSString], forKey: "strength")
         }
         do {
             try context.save()
@@ -92,15 +95,21 @@ class CoreDataHelper {
         let crit = drug.criteria.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         
         if (drug.nameType == NameType.GENERIC){
-            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "ExcludedGeneric", into: context)
-            drugEntity.setValue(pName, forKey: "genericName")
-            drugEntity.setValue(drug.alternateNames as [NSString], forKey: "brandName")
-            drugEntity.setValue(crit, forKey: "criteria")
+            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "ExcludedGeneric", into: context) as! ExcludedGeneric
+            drugEntity.genericName = pName
+            drugEntity.brandName = drug.alternateNames as [NSString]
+            drugEntity.criteria = crit
+//            drugEntity.setValue(pName, forKey: "genericName")
+//            drugEntity.setValue(drug.alternateNames as [NSString], forKey: "brandName")
+//            drugEntity.setValue(crit, forKey: "criteria")
         } else {
-            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "ExcludedBrand", into: context)
-            drugEntity.setValue(pName, forKey: "brandName")
-            drugEntity.setValue(drug.alternateNames as [NSString], forKey: "genericName")
-            drugEntity.setValue(crit, forKey: "criteria")
+            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "ExcludedBrand", into: context) as! ExcludedBrand
+            drugEntity.brandName = pName
+            drugEntity.genericName = drug.alternateNames as [NSString]
+            drugEntity.criteria = crit
+//            drugEntity.setValue(pName, forKey: "brandName")
+//            drugEntity.setValue(drug.alternateNames as [NSString], forKey: "genericName")
+//            drugEntity.setValue(crit, forKey: "criteria")
         }
         do {
             try context.save()
@@ -115,15 +124,21 @@ class CoreDataHelper {
         let crit = drug.criteria.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         
         if (drug.nameType == NameType.GENERIC){
-            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "RestrictedGeneric", into: context)
-            drugEntity.setValue(pName, forKey: "genericName")
-            drugEntity.setValue(drug.alternateNames as [NSString], forKey: "brandName")
-            drugEntity.setValue(crit, forKey: "criteria")
+            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "RestrictedGeneric", into: context) as! RestrictedGeneric
+            drugEntity.genericName = pName
+            drugEntity.brandName = drug.alternateNames as [NSString]
+            drugEntity.criteria = crit
+//            drugEntity.setValue(pName, forKey: "genericName")
+//            drugEntity.setValue(drug.alternateNames as [NSString], forKey: "brandName")
+//            drugEntity.setValue(crit, forKey: "criteria")
         } else {
-            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "RestrictedBrand", into: context)
-            drugEntity.setValue(pName, forKey: "brandName")
-            drugEntity.setValue(drug.alternateNames as [NSString], forKey: "genericName")
-            drugEntity.setValue(crit, forKey: "criteria")
+            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "RestrictedBrand", into: context) as! RestrictedBrand
+            drugEntity.brandName = pName
+            drugEntity.genericName = drug.alternateNames as [NSString]
+            drugEntity.criteria = crit
+//            drugEntity.setValue(pName, forKey: "brandName")
+//            drugEntity.setValue(drug.alternateNames as [NSString], forKey: "genericName")
+//            drugEntity.setValue(crit, forKey: "criteria")
         }
         do {
             try context.save()
