@@ -18,6 +18,6 @@ extension ExcludedBrand {
 
     @NSManaged public var brandName: String?
     @NSManaged public var criteria: String?
-    @NSManaged public var genericName: NSObject?
+    @NSManaged public var genericName: [NSString]?
 
 }

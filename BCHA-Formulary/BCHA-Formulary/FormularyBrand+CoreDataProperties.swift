@@ -17,7 +17,7 @@ extension FormularyBrand {
     }
 
     @NSManaged public var brandName: String?
-    @NSManaged public var genericName: NSObject?
-    @NSManaged public var strength: NSObject?
+    @NSManaged public var genericName: [NSString]?
+    @NSManaged public var strength: [NSString]?
 
 }

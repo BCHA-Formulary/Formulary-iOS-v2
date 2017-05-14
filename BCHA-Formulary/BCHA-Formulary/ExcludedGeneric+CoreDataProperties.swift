@@ -16,7 +16,7 @@ extension ExcludedGeneric {
         return NSFetchRequest<ExcludedGeneric>(entityName: "ExcludedGeneric")
     }
 
-    @NSManaged public var brandName: NSObject?
+    @NSManaged public var brandName: [NSString]?
     @NSManaged public var criteria: String?
     @NSManaged public var genericName: String?
 

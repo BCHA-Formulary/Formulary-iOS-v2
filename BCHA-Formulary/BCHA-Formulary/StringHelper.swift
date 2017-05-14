@@ -13,4 +13,10 @@ struct StringHelper {
     
     static let DRUG_ENTRY_TABLE = String(describing: DrugEntry.self)
     static let DRUG_CLASS_TABLE = String(describing: DrugClass.self)
+    static let FORMUARLY_GENERIC_TABLE = String(describing: FormularyGeneric.self)
+    static let FORMUARLY_BRAND_TABLE = String(describing: FormularyBrand.self)
+    static let EXCLUDED_GENERIC_TABLE = String(describing: ExcludedGeneric.self)
+    static let EXCLUDED_BRAND_TABLE = String(describing: ExcludedBrand.self)
+    static let RESTRICTED_GENERIC_TABLE = String(describing: RestrictedGeneric.self)
+    static let RESTRICTED_BRAND_TABLE = String(describing: RestrictedBrand.self)
 }

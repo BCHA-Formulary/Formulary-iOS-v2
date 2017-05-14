@@ -25,6 +25,7 @@
 		AF519F2A1EBBA29C00385A4C /* DrugClass+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F261EBBA29C00385A4C /* DrugClass+CoreDataProperties.swift */; };
 		AF519F2B1EBBA29C00385A4C /* DrugEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F271EBBA29C00385A4C /* DrugEntry+CoreDataClass.swift */; };
 		AF519F2C1EBBA29C00385A4C /* DrugEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F281EBBA29C00385A4C /* DrugEntry+CoreDataProperties.swift */; };
+		AF519F2E1EBD2EC400385A4C /* DrugResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F2D1EBD2EC400385A4C /* DrugResultViewController.swift */; };
 		AF59AFB11EAFE882002D06DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59AFB01EAFE882002D06DD /* AppDelegate.swift */; };
 		AF59AFB31EAFE882002D06DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59AFB21EAFE882002D06DD /* MainViewController.swift */; };
 		AF59AFB61EAFE882002D06DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF59AFB41EAFE882002D06DD /* Main.storyboard */; };
@@ -77,6 +78,7 @@
 		AF519F261EBBA29C00385A4C /* DrugClass+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DrugClass+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AF519F271EBBA29C00385A4C /* DrugEntry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DrugEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AF519F281EBBA29C00385A4C /* DrugEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DrugEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AF519F2D1EBD2EC400385A4C /* DrugResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugResultViewController.swift; sourceTree = "<group>"; };
 		AF59AFAD1EAFE882002D06DD /* BCHA-Formulary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BCHA-Formulary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF59AFB01EAFE882002D06DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF59AFB21EAFE882002D06DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			children = (
 				AF59AFB21EAFE882002D06DD /* MainViewController.swift */,
 				AF7772A71EB00BAC00E20590 /* LaunchViewController.swift */,
+				AF519F2D1EBD2EC400385A4C /* DrugResultViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				AF519F141EBB9CAE00385A4C /* FormularyGeneric+CoreDataProperties.swift in Sources */,
 				AFD782231EB2B69E00ED7E9B /* StringHelper.swift in Sources */,
 				AF519F1B1EBB9CAE00385A4C /* FormularyBrand+CoreDataClass.swift in Sources */,
+				AF519F2E1EBD2EC400385A4C /* DrugResultViewController.swift in Sources */,
 				AFDD388C1EAFFE0300908BAC /* DrugBase.swift in Sources */,
 				AFD782211EB14C5400ED7E9B /* CoreDataHelper.swift in Sources */,
 				AFDD38911EAFFE0300908BAC /* Status.swift in Sources */,

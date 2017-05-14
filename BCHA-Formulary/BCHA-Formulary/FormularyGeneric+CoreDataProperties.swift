@@ -16,8 +16,8 @@ extension FormularyGeneric {
         return NSFetchRequest<FormularyGeneric>(entityName: "FormularyGeneric")
     }
 
-    @NSManaged public var brandName: NSObject?
+    @NSManaged public var brandName: [NSString]?
     @NSManaged public var genericName: String?
-    @NSManaged public var strength: NSObject?
+    @NSManaged public var strength: [NSString]?
 
 }

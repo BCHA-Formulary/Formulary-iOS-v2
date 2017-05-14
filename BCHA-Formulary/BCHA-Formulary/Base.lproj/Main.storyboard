@@ -56,6 +56,10 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pF8-2B-dMT">
                                 <rect key="frame" x="276" y="334" width="48" height="30"/>
                                 <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZBg-gX-HX5"/>
+                                    <segue destination="xqI-Xk-kaW" kind="show" identifier="DrugResultSegue" id="3Iv-Nf-PJI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ff-Wi-YgU">
                                 <rect key="frame" x="530" y="172" width="50" height="50"/>
@@ -154,10 +158,10 @@
             </objects>
             <point key="canvasLocation" x="1676" y="-70"/>
         </scene>
-        <!--Drug Results View Controller-->
+        <!--Drug Result View Controller-->
         <scene sceneID="tE1-Fb-VoS">
             <objects>
-                <tableViewController id="xqI-Xk-kaW" customClass="DrugResultsViewController" customModule="BCHA_Formulary" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xqI-Xk-kaW" customClass="DrugResultViewController" customModule="BCHA_Formulary" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="glq-LH-mWX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,7 +213,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7QN-ex-UJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1676" y="626"/>
+            <point key="canvasLocation" x="1746" y="626"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="NiX-tY-z4w">

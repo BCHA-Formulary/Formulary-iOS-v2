@@ -22,12 +22,12 @@ class CoreDataHelper {
     
     func removeOutdatedEntities(){
         deleteEntries(entityTableName: StringHelper.DRUG_ENTRY_TABLE)
-        deleteEntries(entityTableName: "FormularyGeneric")
-        deleteEntries(entityTableName: "FormularyBrand")
-        deleteEntries(entityTableName: "ExcludedGeneric")
-        deleteEntries(entityTableName: "ExcludedBrand")
-        deleteEntries(entityTableName: "RestrictedGeneric")
-        deleteEntries(entityTableName: "RestrictedBrand")
+        deleteEntries(entityTableName: StringHelper.FORMUARLY_GENERIC_TABLE)
+        deleteEntries(entityTableName: StringHelper.FORMUARLY_BRAND_TABLE)
+        deleteEntries(entityTableName: StringHelper.EXCLUDED_GENERIC_TABLE)
+        deleteEntries(entityTableName: StringHelper.EXCLUDED_BRAND_TABLE)
+        deleteEntries(entityTableName: StringHelper.RESTRICTED_GENERIC_TABLE)
+        deleteEntries(entityTableName: StringHelper.RESTRICTED_BRAND_TABLE)
     }
     
     func saveFirebaseDrugListUpdate(masterDrugList:[DrugBase], firebaseUpdateDate:String){
@@ -69,10 +69,10 @@ class CoreDataHelper {
         let pName = drug.primaryName.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         
         if (drug.nameType == NameType.GENERIC){
-            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "FormularyGeneric", into: context)
-            drugEntity.setValue(pName, forKey: "genericName")
-            drugEntity.setValue(drug.alternateNames as [NSString], forKey: "brandName")
-            drugEntity.setValue(drug.strengths as [NSString], forKey: "strength")
+            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: StringHelper.FORMUARLY_GENERIC_TABLE, into: context) as! FormularyGeneric
+            drugEntity.genericName = pName
+            drugEntity.brandName = drug.alternateNames as [NSString]
+            drugEntity.strength = drug.strengths as [NSString]
         } else {
             let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "FormularyBrand", into: context)
             drugEntity.setValue(pName, forKey: "brandName")
@@ -205,4 +205,91 @@ class CoreDataHelper {
         }
         return Array(drugNames)
     }
+    
+    func doesDrugExist(drugName:String) -> Bool {
+        let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName:StringHelper.DRUG_ENTRY_TABLE)
+        fetchReq.returnsObjectsAsFaults = false
+        fetchReq.predicate = NSPredicate(format:"name = %@", drugName)
+        do {
+            let fetchReq = try context.fetch(fetchReq)
+            return fetchReq.count > 0
+        }
+        catch {
+            print("Error searching for drug: " + drugName)
+            return false
+        }
+    }
+    
+    func getDrugFromSaved(drugName:String) -> DrugBase? {
+        let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName:StringHelper.DRUG_ENTRY_TABLE)
+        fetchReq.returnsObjectsAsFaults = false
+        fetchReq.predicate = NSPredicate(format:"name = %@", drugName)
+        do {
+            let fetchReq = try context.fetch(fetchReq)
+            if (fetchReq.count > 0){
+                let drugEntry = fetchReq[0] as! DrugEntry
+                var foundDrug:DrugBase
+                if drugEntry.status == Status.FORMULARY.rawValue {
+                    foundDrug = getFormularyDrug(drugEntry: drugEntry)!
+                }
+//                else if drugEntry.status == Status.EXCLUDED.rawValue {
+//                    foundDrug = getExcludedDrug(drugEntry: drugEntry)
+//                }
+//                else {
+//                    foundDrug = getRestrictedDrug(drugEntry: drugEntry)
+//                }
+                return nil
+            }
+        }
+        catch {
+            print("Error searching for drug: " + drugName)
+            return nil
+        }
+        return nil
+    }
+    
+//    private func getFormularyDrug(drugEntry:DrugEntry) -> FormularyDrug {
+    private func getFormularyDrug(drugEntry:DrugEntry) -> FormularyDrug? {
+        let isGeneric = (drugEntry.nameType == NameType.GENERIC.rawValue)
+        var formularyTable:String
+        if isGeneric {
+            formularyTable = StringHelper.FORMUARLY_GENERIC_TABLE
+        } else {
+            formularyTable = StringHelper.FORMUARLY_BRAND_TABLE
+        }
+        let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName:formularyTable)
+        fetchReq.returnsObjectsAsFaults = false
+        do {
+            if isGeneric {
+                fetchReq.predicate = NSPredicate(format:"genericName = %@", drugEntry.name!)
+            } else {
+                fetchReq.predicate = NSPredicate(format:"brandName = %@", drugEntry.name!)
+            }
+            
+            let fetchReq = try context.fetch(fetchReq)
+            
+            if fetchReq.count > 0 {
+                if isGeneric{
+                    let fGen = fetchReq[0] as! FormularyGeneric
+                    let fBrand = fGen.brandName! as [String]
+                    print(fBrand[0])
+                } else {
+                    
+                }
+            }
+            
+        }
+        catch {
+            
+        }
+        return nil
+    }
+    
+//    private func getExcludedDrug(drugEntry:DrugEntry) -> ExcludedDrug {
+//        
+//    }
+//    
+//    private func getRestrictedDrug(drugEntry:DrugEntry) -> RestrictedDrug {
+//        
+//    }
 }

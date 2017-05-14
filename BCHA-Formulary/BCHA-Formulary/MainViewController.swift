@@ -34,7 +34,39 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("Prep segue")
+        if (segue.identifier == "DrugResultSegue") {
+            let svc = segue.destination as! DrugResultViewController;
+            
+            // Drug exists at this point
+            svc.drugResult = core.getDrugFromSaved(drugName: drugSearchTextField.text!)
+        }
+//        else if (segue.identifier == "NoDrugResultSegue"){
+//            let svc = segue.destinationViewController as! NoDrugResultViewController
+//            
+//            if(drugSearchTextField == nil){
+//                svc.drugName = searchField.text
+//            }
+//        }
+    }
 
-
+    @IBAction func searchTapped(_ sender: UIButton) {
+        //no text entered check
+        if (drugSearchTextField.text?.isEmpty)!{
+            print("No text entered")
+            return
+        }
+        
+        print("Searching for drug:" + drugSearchTextField.text!)
+        if core.doesDrugExist(drugName: drugSearchTextField.text!) {
+         //TODO go to result view
+             performSegue(withIdentifier: "DrugResultSegue", sender: self)
+        }
+        else {
+            //TODO go to no drug found view
+            performSegue(withIdentifier: "NoDrugResultSegue", sender: self)
+        }
+    }
 }
-

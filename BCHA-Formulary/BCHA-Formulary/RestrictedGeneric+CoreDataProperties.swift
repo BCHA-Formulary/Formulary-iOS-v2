@@ -16,7 +16,7 @@ extension RestrictedGeneric {
         return NSFetchRequest<RestrictedGeneric>(entityName: "RestrictedGeneric")
     }
 
-    @NSManaged public var brandName: NSObject?
+    @NSManaged public var brandName: [NSString]?
     @NSManaged public var criteria: String?
     @NSManaged public var genericName: String?
 
