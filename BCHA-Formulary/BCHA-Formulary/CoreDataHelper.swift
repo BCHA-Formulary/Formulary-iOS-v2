@@ -52,7 +52,7 @@ class CoreDataHelper {
         for dClass in drug.drugClass {
             //primary name save. The master list contains generic and brand names in individual drug objects. Do not save the alternate names here
             let drugEntry = NSEntityDescription.insertNewObject(forEntityName: StringHelper.DRUG_ENTRY_TABLE, into: context) as! DrugEntry
-            drugEntry.name = drug.primaryName.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            drugEntry.name = drug.primaryName.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
             drugEntry.nameType = drug.nameType.rawValue
             drugEntry.status = drug.status.rawValue
             drugEntry.drugClass = getDrugClassIfExist(drugClassName: dClass.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))
@@ -299,12 +299,4 @@ class CoreDataHelper {
         }
         return nil
     }
-    
-//    private func getExcludedDrug(drugEntry:DrugEntry) -> ExcludedDrug {
-//        
-//    }
-//    
-//    private func getRestrictedDrug(drugEntry:DrugEntry) -> RestrictedDrug {
-//        
-//    }
 }

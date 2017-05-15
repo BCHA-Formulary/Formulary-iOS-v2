@@ -34,6 +34,7 @@
 		AF59AFC91EAFE882002D06DD /* BCHA_FormularyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59AFC81EAFE882002D06DD /* BCHA_FormularyTests.swift */; };
 		AF7772A81EB00BAC00E20590 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7772A71EB00BAC00E20590 /* LaunchViewController.swift */; };
 		AF7772AB1EB0157300E20590 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF7772AA1EB0157300E20590 /* GoogleService-Info.plist */; };
+		AFAD0CB61EC8547A008C3455 /* NoDrugFoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAD0CB51EC8547A008C3455 /* NoDrugFoundViewController.swift */; };
 		AFD7821F1EB1404E00ED7E9B /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD7821E1EB1404E00ED7E9B /* FirebaseHelper.swift */; };
 		AFD782211EB14C5400ED7E9B /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD782201EB14C5400ED7E9B /* CoreDataHelper.swift */; };
 		AFD782231EB2B69E00ED7E9B /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD782221EB2B69E00ED7E9B /* StringHelper.swift */; };
@@ -91,6 +92,7 @@
 		AF59AFCA1EAFE882002D06DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF7772A71EB00BAC00E20590 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		AF7772AA1EB0157300E20590 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AFAD0CB51EC8547A008C3455 /* NoDrugFoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDrugFoundViewController.swift; sourceTree = "<group>"; };
 		AFD7821E1EB1404E00ED7E9B /* FirebaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		AFD782201EB14C5400ED7E9B /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		AFD782221EB2B69E00ED7E9B /* StringHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				AF59AFB21EAFE882002D06DD /* MainViewController.swift */,
 				AF7772A71EB00BAC00E20590 /* LaunchViewController.swift */,
 				AF519F2D1EBD2EC400385A4C /* DrugResultViewController.swift */,
+				AFAD0CB51EC8547A008C3455 /* NoDrugFoundViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				AFDD38911EAFFE0300908BAC /* Status.swift in Sources */,
 				AF519F151EBB9CAE00385A4C /* ExcludedGeneric+CoreDataClass.swift in Sources */,
 				AF519F171EBB9CAE00385A4C /* ExcludedBrand+CoreDataClass.swift in Sources */,
+				AFAD0CB61EC8547A008C3455 /* NoDrugFoundViewController.swift in Sources */,
 				AFDD388D1EAFFE0300908BAC /* ExcludedDrug.swift in Sources */,
 				AFDD388F1EAFFE0300908BAC /* NameType.swift in Sources */,
 				AFD7821F1EB1404E00ED7E9B /* FirebaseHelper.swift in Sources */,

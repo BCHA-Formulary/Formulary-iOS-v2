@@ -11,7 +11,6 @@ import UIKit
 
 class DrugResultViewController: UITableViewController {
     var drugResult:DrugBase!
-    var drugStatus:Status!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -43,13 +43,13 @@ class MainViewController: UIViewController {
             // Drug exists at this point
             svc.drugResult = core.getDrugFromSaved(drugName: drugSearchTextField.text!)
         }
-//        else if (segue.identifier == "NoDrugResultSegue"){
-//            let svc = segue.destinationViewController as! NoDrugResultViewController
-//            
-//            if(drugSearchTextField == nil){
-//                svc.drugName = searchField.text
-//            }
-//        }
+        else if (segue.identifier == "NoDrugResultSegue"){
+            let svc = segue.destination as! NoDrugFoundViewController
+            
+            if(drugSearchTextField != nil){
+                svc.drugSearched = drugSearchTextField.text
+            }
+        }
     }
 
     @IBAction func searchTapped(_ sender: UIButton) {
@@ -60,7 +60,7 @@ class MainViewController: UIViewController {
         }
         
         print("Searching for drug:" + drugSearchTextField.text!)
-        if core.doesDrugExist(drugName: drugSearchTextField.text!) {
+        if core.doesDrugExist(drugName: drugSearchTextField.text!.uppercased()) {
          //TODO go to result view
              performSegue(withIdentifier: "DrugResultSegue", sender: self)
         }
