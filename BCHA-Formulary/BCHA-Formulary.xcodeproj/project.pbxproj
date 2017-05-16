@@ -14,6 +14,7 @@
 		AF4E3E921ECADF4500106DE3 /* DrugClass+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3E8E1ECADF4500106DE3 /* DrugClass+CoreDataClass.swift */; };
 		AF4E3E931ECADF4500106DE3 /* DrugClass+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3E8F1ECADF4500106DE3 /* DrugClass+CoreDataProperties.swift */; };
 		AF4E3E951ECAF24A00106DE3 /* DrugClassSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3E941ECAF24A00106DE3 /* DrugClassSearchTableViewController.swift */; };
+		AF4E3E971ECAFE9400106DE3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E3E961ECAFE9400106DE3 /* AboutViewController.swift */; };
 		AF519F111EBB9CAE00385A4C /* RestrictedBrand+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F011EBB9CAE00385A4C /* RestrictedBrand+CoreDataClass.swift */; };
 		AF519F121EBB9CAE00385A4C /* RestrictedBrand+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F021EBB9CAE00385A4C /* RestrictedBrand+CoreDataProperties.swift */; };
 		AF519F131EBB9CAE00385A4C /* FormularyGeneric+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF519F031EBB9CAE00385A4C /* FormularyGeneric+CoreDataClass.swift */; };
@@ -69,6 +70,7 @@
 		AF4E3E8E1ECADF4500106DE3 /* DrugClass+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DrugClass+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AF4E3E8F1ECADF4500106DE3 /* DrugClass+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DrugClass+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AF4E3E941ECAF24A00106DE3 /* DrugClassSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugClassSearchTableViewController.swift; sourceTree = "<group>"; };
+		AF4E3E961ECAFE9400106DE3 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		AF519F011EBB9CAE00385A4C /* RestrictedBrand+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestrictedBrand+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AF519F021EBB9CAE00385A4C /* RestrictedBrand+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestrictedBrand+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AF519F031EBB9CAE00385A4C /* FormularyGeneric+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FormularyGeneric+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				AF519F2D1EBD2EC400385A4C /* DrugResultViewController.swift */,
 				AFAD0CB51EC8547A008C3455 /* NoDrugFoundViewController.swift */,
 				AF4E3E941ECAF24A00106DE3 /* DrugClassSearchTableViewController.swift */,
+				AF4E3E961ECAFE9400106DE3 /* AboutViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				AFD782211EB14C5400ED7E9B /* CoreDataHelper.swift in Sources */,
 				AFDD38911EAFFE0300908BAC /* Status.swift in Sources */,
 				AF519F151EBB9CAE00385A4C /* ExcludedGeneric+CoreDataClass.swift in Sources */,
+				AF4E3E971ECAFE9400106DE3 /* AboutViewController.swift in Sources */,
 				AF519F171EBB9CAE00385A4C /* ExcludedBrand+CoreDataClass.swift in Sources */,
 				AFAD0CB61EC8547A008C3455 /* NoDrugFoundViewController.swift in Sources */,
 				AFDD388D1EAFFE0300908BAC /* ExcludedDrug.swift in Sources */,

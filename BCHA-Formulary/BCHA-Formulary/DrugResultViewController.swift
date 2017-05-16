@@ -23,12 +23,18 @@ class DrugResultViewController: UITableViewController {
             return
         }
         
-        //order strength list if formulary
-        if(drugResult.status == Status.FORMULARY){
-            strengthList = (drugResult as! FormularyDrug).strengths.sorted(){$0 < $1}
-        }
         tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+        
+        //order strength list if formulary
+        if (drugResult.status == Status.FORMULARY){
+            strengthList = (drugResult as! FormularyDrug).strengths.sorted(){$0 < $1}
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,11 +51,6 @@ class DrugResultViewController: UITableViewController {
         }
         
         tableView.reloadData()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
