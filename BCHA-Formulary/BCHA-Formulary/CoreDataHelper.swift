@@ -206,6 +206,25 @@ class CoreDataHelper {
         return Array(drugNames)
     }
     
+    func getDrugNamesByDrugClass(drugClassName:String)->[String]{
+        let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName:StringHelper.DRUG_CLASS_TABLE)
+        fetchReq.returnsObjectsAsFaults = false
+        fetchReq.predicate = NSPredicate(format:"drugClass = %@", drugClassName)
+        
+        do {
+            let fetchReq = try context.fetch(fetchReq)
+            if fetchReq.count > 0 {
+                let drugClass = fetchReq[0] as! DrugClass
+                let drugEntriesWithClass = drugClass.drugEntry.value(forKey: "name") as! Set<String>
+                return Array(drugEntriesWithClass)
+            }
+        }
+        catch {
+            print("Error searching for drugs by class: " + drugClassName)
+        }
+        return [String]()
+    }
+    
     func doesDrugExist(drugName:String) -> Bool {
         let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName:StringHelper.DRUG_ENTRY_TABLE)
         fetchReq.returnsObjectsAsFaults = false

@@ -67,18 +67,18 @@ class DrugResultViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if (segue.identifier == "DrugClassSearchSegue") {
-//            //going to drug search by class
-//            self.navigationController?.isNavigationBarHidden = false
-//            let drugSearchViewController = segue.destinationViewController as! DrugClassSearchTableViewController
-//            if let indexPath = tableView.indexPath(for: sender as! UITableViewCell){
-//                drugSearchViewController.drugClassName = drug.drugClass[indexPath.row]
-//            }
-//        }
-//        else{
-//            //going back to main search page
-//            self.navigationController?.isNavigationBarHidden = true
-//        }
+        if (segue.identifier == "DrugClassSearchSegue") {
+            //going to drug search by class
+            self.navigationController?.isNavigationBarHidden = false
+            let drugSearchViewController = segue.destination as! DrugClassSearchTableViewController
+            if let indexPath = tableView.indexPath(for: sender as! UITableViewCell){
+                drugSearchViewController.drugClassName = drugResult.drugClass[indexPath.row]
+            }
+        }
+        else{
+            //going back to main search page
+            self.navigationController?.isNavigationBarHidden = true
+        }
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
