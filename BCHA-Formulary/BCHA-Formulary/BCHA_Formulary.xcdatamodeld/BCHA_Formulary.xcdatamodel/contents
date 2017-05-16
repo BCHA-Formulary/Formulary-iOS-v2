@@ -2,13 +2,13 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="DrugClass" representedClassName=".DrugClass" syncable="YES">
         <attribute name="drugClass" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="drugEntry" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DrugEntry" syncable="YES"/>
+        <relationship name="drugEntry" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DrugEntry" inverseName="drugClass" inverseEntity="DrugEntry" syncable="YES"/>
     </entity>
     <entity name="DrugEntry" representedClassName=".DrugEntry" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nameType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="drugClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DrugClass" syncable="YES"/>
+        <relationship name="drugClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DrugClass" inverseName="drugEntry" inverseEntity="DrugClass" syncable="YES"/>
     </entity>
     <entity name="ExcludedBrand" representedClassName=".ExcludedBrand" syncable="YES">
         <attribute name="brandName" optional="YES" attributeType="String" syncable="YES"/>
@@ -41,6 +41,7 @@
         <attribute name="genericName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="DrugClass" positionX="-9" positionY="54" width="128" height="75"/>
         <element name="DrugEntry" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="ExcludedBrand" positionX="18" positionY="63" width="128" height="90"/>
         <element name="ExcludedGeneric" positionX="0" positionY="45" width="128" height="90"/>
@@ -48,6 +49,5 @@
         <element name="FormularyGeneric" positionX="-36" positionY="27" width="128" height="90"/>
         <element name="RestrictedBrand" positionX="-9" positionY="36" width="128" height="90"/>
         <element name="RestrictedGeneric" positionX="36" positionY="81" width="128" height="90"/>
-        <element name="DrugClass" positionX="-9" positionY="54" width="128" height="75"/>
     </elements>
 </model>

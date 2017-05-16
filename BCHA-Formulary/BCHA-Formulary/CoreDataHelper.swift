@@ -74,7 +74,7 @@ class CoreDataHelper {
             drugEntity.brandName = drug.alternateNames as [NSString]
             drugEntity.strength = drug.strengths as [NSString]
         } else {
-            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "FormularyBrand", into: context) as! FormularyBrand
+            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: StringHelper.FORMUARLY_BRAND_TABLE, into: context) as! FormularyBrand
             drugEntity.brandName = pName
             drugEntity.genericName = drug.alternateNames as [NSString]
             drugEntity.strength = drug.strengths as [NSString]
@@ -95,7 +95,7 @@ class CoreDataHelper {
         let crit = drug.criteria.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         
         if (drug.nameType == NameType.GENERIC){
-            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "ExcludedGeneric", into: context) as! ExcludedGeneric
+            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: StringHelper.EXCLUDED_GENERIC_TABLE, into: context) as! ExcludedGeneric
             drugEntity.genericName = pName
             drugEntity.brandName = drug.alternateNames as [NSString]
             drugEntity.criteria = crit
@@ -103,7 +103,7 @@ class CoreDataHelper {
 //            drugEntity.setValue(drug.alternateNames as [NSString], forKey: "brandName")
 //            drugEntity.setValue(crit, forKey: "criteria")
         } else {
-            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "ExcludedBrand", into: context) as! ExcludedBrand
+            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: StringHelper.EXCLUDED_BRAND_TABLE, into: context) as! ExcludedBrand
             drugEntity.brandName = pName
             drugEntity.genericName = drug.alternateNames as [NSString]
             drugEntity.criteria = crit
@@ -124,7 +124,7 @@ class CoreDataHelper {
         let crit = drug.criteria.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         
         if (drug.nameType == NameType.GENERIC){
-            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "RestrictedGeneric", into: context) as! RestrictedGeneric
+            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: StringHelper.RESTRICTED_GENERIC_TABLE, into: context) as! RestrictedGeneric
             drugEntity.genericName = pName
             drugEntity.brandName = drug.alternateNames as [NSString]
             drugEntity.criteria = crit
@@ -132,7 +132,7 @@ class CoreDataHelper {
 //            drugEntity.setValue(drug.alternateNames as [NSString], forKey: "brandName")
 //            drugEntity.setValue(crit, forKey: "criteria")
         } else {
-            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: "RestrictedBrand", into: context) as! RestrictedBrand
+            let drugEntity = NSEntityDescription.insertNewObject(forEntityName: StringHelper.RESTRICTED_BRAND_TABLE, into: context) as! RestrictedBrand
             drugEntity.brandName = pName
             drugEntity.genericName = drug.alternateNames as [NSString]
             drugEntity.criteria = crit
@@ -235,17 +235,37 @@ class CoreDataHelper {
         }
     }
     
-    func getDrugFromSaved(drugName:String) -> DrugBase? {
+//    func getDrugClasses(drugEntry:DrugEntry) -> [String] {
+//        let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName:StringHelper.DRUG_CLASS_TABLE)
+//        fetchReq.returnsObjectsAsFaults = false
+//        fetchReq.predicate = NSPredicate(format:"ANY drugEntry = %@", drugEntry)
+//        
+//        do {
+//            let fetchReq = try context.fetch(fetchReq)
+//            if (fetchReq.count > 0){
+//                print("Drug class count: " + String(fetchReq.count))
+//            }
+//        }
+//            catch {
+//                print("Error getting drug classes for: " + drugEntry.name!)
+//                return [String]()
+//            }
+//        return [String]()
+//    }
+    
+    func getDrugsFromSaved(drugName:String) -> DrugBase? {
         let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName:StringHelper.DRUG_ENTRY_TABLE)
         fetchReq.returnsObjectsAsFaults = false
         fetchReq.predicate = NSPredicate(format:"name = %@", drugName)
         do {
             let fetchReq = try context.fetch(fetchReq)
             if (fetchReq.count > 0){
-                let drugEntry = fetchReq[0] as! DrugEntry
+                var drugList = [DrugBase]()
+                let drugEntries = fetchReq as! [DrugEntry]
+                print(String(drugEntries.count) + " drug entries found")
                 var foundDrug:DrugBase
-                if drugEntry.status == Status.FORMULARY.rawValue {
-                    foundDrug = getFormularyDrug(drugEntry: drugEntry)!
+                if drugEntries[0].status == Status.FORMULARY.rawValue {
+                    foundDrug = getFormularyDrug(drugEntries: drugEntries)!
                 }
 //                else if drugEntry.status == Status.EXCLUDED.rawValue {
 //                    foundDrug = getExcludedDrug(drugEntry: drugEntry)
@@ -264,14 +284,27 @@ class CoreDataHelper {
     }
     
 //    private func getFormularyDrug(drugEntry:DrugEntry) -> FormularyDrug {
-    private func getFormularyDrug(drugEntry:DrugEntry) -> FormularyDrug? {
+    private func getFormularyDrug(drugEntries:[DrugEntry]) -> FormularyDrug? {
+        //use the first entry as the assumed drug (subsequent just for drug classes)
+        let drugEntry = drugEntries[0]
         let isGeneric = (drugEntry.nameType == NameType.GENERIC.rawValue)
+        
+        //get all the drug classes
+        var drugClasses = [String]()
+        for drug in drugEntries {
+            if (drug.drugClass != nil) {
+                drugClasses.append(drug.drugClass!.drugClass!)
+            }
+        }
+        
         var formularyTable:String
         if isGeneric {
             formularyTable = StringHelper.FORMUARLY_GENERIC_TABLE
         } else {
             formularyTable = StringHelper.FORMUARLY_BRAND_TABLE
         }
+        
+        //fetch the drug from the formularyTable type
         let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName:formularyTable)
         fetchReq.returnsObjectsAsFaults = false
         do {
@@ -284,12 +317,17 @@ class CoreDataHelper {
             let fetchReq = try context.fetch(fetchReq)
             
             if fetchReq.count > 0 {
+               // print(fetchReq[0])
                 if isGeneric{
-                    let fGen = fetchReq[0] as! FormularyGeneric
-                    let fBrand = fGen.brandName! as [String]
-                    print(fBrand[0])
+                    let fGen = fetchReq[0] as! FormularyGeneric //should only be one...
+//                    print(drugEntry.drugClass!.drugClass!)
+                    //let dClasses = getDrugClasses(drugEntry: drugEntry)
+//                    print(getDrugClasses(drugEntry: drugEntry))
+                    return FormularyDrug(primaryName: fGen.genericName!, nameType: NameType.GENERIC, alternateNames: fGen.brandName! as [String], status: Status.FORMULARY, drugClass: drugClasses, strengths: fGen.strength! as [String])
                 } else {
-                    
+                    let fBrand = fetchReq[0] as! FormularyBrand
+                    print(drugEntry.drugClass!.drugClass!)
+                    return FormularyDrug(primaryName: fBrand.brandName!, nameType: NameType.BRAND, alternateNames: fBrand.genericName! as [String], status: Status.FORMULARY, drugClass: drugClasses, strengths: fBrand.strength! as [String])
                 }
             }
             

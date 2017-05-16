@@ -41,7 +41,7 @@ class MainViewController: UIViewController {
             let svc = segue.destination as! DrugResultViewController;
             
             // Drug exists at this point
-            svc.drugResult = core.getDrugFromSaved(drugName: drugSearchTextField.text!)
+            svc.drugResult = core.getDrugsFromSaved(drugName: drugSearchTextField.text!.uppercased())
         }
         else if (segue.identifier == "NoDrugResultSegue"){
             let svc = segue.destination as! NoDrugFoundViewController

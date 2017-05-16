@@ -2,7 +2,7 @@
 //  DrugClass+CoreDataProperties.swift
 //  BCHA-Formulary
 //
-//  Created by Kelvin Chan on 2017-05-04.
+//  Created by Kelvin Chan on 2017-05-16.
 //  Copyright © 2017 BCHA. All rights reserved.
 //
 
@@ -17,7 +17,7 @@ extension DrugClass {
     }
 
     @NSManaged public var drugClass: String?
-    @NSManaged public var drugEntry: NSSet?
+    @NSManaged public var drugEntry: NSSet
 
 }
 

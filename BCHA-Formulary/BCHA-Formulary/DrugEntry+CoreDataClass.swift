@@ -2,7 +2,7 @@
 //  DrugEntry+CoreDataClass.swift
 //  BCHA-Formulary
 //
-//  Created by Kelvin Chan on 2017-05-04.
+//  Created by Kelvin Chan on 2017-05-16.
 //  Copyright © 2017 BCHA. All rights reserved.
 //
 

@@ -58,7 +58,6 @@
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <action selector="searchTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZBg-gX-HX5"/>
-                                    <segue destination="xqI-Xk-kaW" kind="show" identifier="DrugResultSegue" id="3Iv-Nf-PJI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ff-Wi-YgU">
@@ -98,6 +97,8 @@
                     <navigationItem key="navigationItem" id="Slh-zV-g4G"/>
                     <connections>
                         <outlet property="drugSearchTextField" destination="8M3-YH-Bek" id="UEc-lg-goI"/>
+                        <segue destination="xqI-Xk-kaW" kind="show" identifier="DrugResultSegue" id="wFt-9f-k3b"/>
+                        <segue destination="jj3-iM-56X" kind="show" identifier="NoDrugResultSegue" id="Kmx-S4-fgE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -156,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCj-Zf-Y7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1676" y="-70"/>
+            <point key="canvasLocation" x="1854" y="-63"/>
         </scene>
         <!--Drug Result View Controller-->
         <scene sceneID="tE1-Fb-VoS">
@@ -213,7 +214,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7QN-ex-UJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1746" y="626"/>
+            <point key="canvasLocation" x="1855" y="626"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="NiX-tY-z4w">
