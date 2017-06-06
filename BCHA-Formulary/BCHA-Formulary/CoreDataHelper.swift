@@ -66,7 +66,7 @@ class CoreDataHelper {
     }
     
     func addToFormularyTable(drug:FormularyDrug){
-        let pName = drug.primaryName.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        let pName = drug.primaryName.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
         
         if (drug.nameType == NameType.GENERIC){
             let drugEntity = NSEntityDescription.insertNewObject(forEntityName: StringHelper.FORMUARLY_GENERIC_TABLE, into: context) as! FormularyGeneric
@@ -88,7 +88,7 @@ class CoreDataHelper {
     }
     
     func addToExcludedTable(drug: ExcludedDrug){
-        let pName = drug.primaryName.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        let pName = drug.primaryName.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
         let crit = drug.criteria.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         
         if (drug.nameType == NameType.GENERIC){
@@ -111,7 +111,8 @@ class CoreDataHelper {
     }
     
     func addToRestrictedTable(drug: RestrictedDrug){
-        let pName = drug.primaryName.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        let pName = drug.primaryName.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
+        
         let crit = drug.criteria.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         
         if (drug.nameType == NameType.GENERIC){
@@ -385,7 +386,7 @@ class CoreDataHelper {
             restrictedTable = StringHelper.RESTRICTED_BRAND_TABLE
         }
         
-        //fetch the drug from the excludedTable type
+        //fetch the drug from the restrictedTable type
         let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName:restrictedTable)
         fetchReq.returnsObjectsAsFaults = false
         do {
