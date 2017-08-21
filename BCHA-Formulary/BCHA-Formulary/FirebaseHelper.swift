@@ -78,14 +78,31 @@ class FirebaseHelper {
                     nType = NameType.BRAND
                 }
                 
-                let drugClassArr = drugProp["drugClass"] as! NSMutableArray
-                let drugClass = self.trimNSNull(arr: drugClassArr)
+                //TODO find a better way to typecheck
+                var drugClass:[String]
+                if let drugClassArr = drugProp["drugClass"] as? NSMutableArray {
+                    drugClass = self.trimNSNull(arr: drugClassArr)
+                } else {
+                    let drugClassDict = drugProp["drugClass"] as! NSDictionary
+                    drugClass = self.trimNSNull(arr: drugClassDict.allValues as! NSMutableArray)
+                }
                 
-                let altNamesArr = drugProp["alternateName"] as! NSMutableArray
-                let altNames = self.trimNSNull(arr: altNamesArr)
+                var altNames:[String]
+                if let altNamesArr = drugProp["alternateName"] as? NSMutableArray {
+                    altNames = self.trimNSNull(arr: altNamesArr)
+                } else {
+                    let altNamesDict = drugProp["alternateName"] as! NSDictionary
+                    altNames = self.trimNSNull(arr: altNamesDict.allValues as! NSMutableArray)
+                }
                 
-                let strengthArr = drugProp["strengths"] as! NSMutableArray
-                let strengths = self.trimNSNull(arr: strengthArr)
+                var strengths:[String]
+                if let strengthDict = drugProp["strengths"] as? NSDictionary {
+                        print(strengthDict)
+                    strengths = self.trimNSNull(arr: strengthDict.allValues as! NSMutableArray)
+                } else {
+                    let strengthArr = drugProp["strengths"] as! NSMutableArray
+                    strengths = self.trimNSNull(arr: strengthArr)
+                }
                 
                 let fDrug = FormularyDrug.init(primaryName: pName, nameType: nType, alternateNames: altNames, status: Status.FORMULARY, drugClass: drugClass, strengths: strengths)
                 
