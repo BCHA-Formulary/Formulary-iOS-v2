@@ -97,7 +97,6 @@ class FirebaseHelper {
                 
                 var strengths:[String]
                 if let strengthDict = drugProp["strengths"] as? NSDictionary {
-                        print(strengthDict)
                     strengths = self.trimNSNull(arr: strengthDict.allValues as! NSMutableArray)
                 } else {
                     let strengthArr = drugProp["strengths"] as! NSMutableArray
@@ -134,11 +133,21 @@ class FirebaseHelper {
                 
                 let crit = drugProp["criteria"] as! String
                 
-                let drugClassArr = drugProp["drugClass"] as! NSMutableArray
-                let drugClass = self.trimNSNull(arr: drugClassArr)
-                
-                let altNamesArr = drugProp["alternateName"] as! NSMutableArray
-                let altNames = self.trimNSNull(arr: altNamesArr)
+                let drugClass:[String]
+                if let drugClassArr = drugProp["drugClass"] as? NSMutableArray {
+                    drugClass = self.trimNSNull(arr: drugClassArr)
+                } else {
+                    let drugClassDict = drugProp["drugClass"] as! NSMutableDictionary
+                    drugClass = self.trimNSNull(arr: drugClassDict.allValues as! NSMutableArray)
+                }
+
+                var altNames:[String]
+                if let altNamesArr = drugProp["alternateName"] as? NSMutableArray {
+                    altNames = self.trimNSNull(arr: altNamesArr)
+                } else {
+                    let altNamesDict = drugProp["alternateName"] as! NSDictionary
+                    altNames = self.trimNSNull(arr: altNamesDict.allValues as! NSMutableArray)
+                }
                 
                 let eDrug = ExcludedDrug.init(primaryName: pName, nameType: nType, alternateNames: altNames, criteria: crit, status: Status.EXCLUDED, drugClass: drugClass)
                 
@@ -170,11 +179,21 @@ class FirebaseHelper {
                 
                 let crit = drugProp["criteria"] as! String
                 
-                let drugClassArr = drugProp["drugClass"] as! NSMutableArray
-                let drugClass = self.trimNSNull(arr: drugClassArr)
+                let drugClass:[String]
+                if let drugClassArr = drugProp["drugClass"] as? NSMutableArray {
+                    drugClass = self.trimNSNull(arr: drugClassArr)
+                } else {
+                    let drugClassDict = drugProp["drugClass"] as! NSMutableDictionary
+                    drugClass = self.trimNSNull(arr: drugClassDict.allValues as! NSMutableArray)
+                }
                 
-                let altNamesArr = drugProp["alternateName"] as! NSMutableArray
-                let altNames = self.trimNSNull(arr: altNamesArr)
+                var altNames:[String]
+                if let altNamesArr = drugProp["alternateName"] as? NSMutableArray {
+                    altNames = self.trimNSNull(arr: altNamesArr)
+                } else {
+                    let altNamesDict = drugProp["alternateName"] as! NSDictionary
+                    altNames = self.trimNSNull(arr: altNamesDict.allValues as! NSMutableArray)
+                }
                 
                 let rDrug = RestrictedDrug.init(primaryName: pName, nameType: nType, alternateNames: altNames, criteria: crit, status: Status.RESTRICTED, drugClass: drugClass)
                 
