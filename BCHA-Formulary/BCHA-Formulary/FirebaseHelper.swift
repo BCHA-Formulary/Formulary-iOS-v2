@@ -19,24 +19,24 @@ class FirebaseHelper {
     
     func updateAllEntries(lastUpdated:String, completionHandler: @escaping ([DrugBase], String)->Void) {
         var firebaseLastUpdate:String = "none"
-            ref.child("Update").observeSingleEvent(of: .value, with: {(snapshot) in
-                firebaseLastUpdate = (snapshot.value as! NSString) as String
-                if(firebaseLastUpdate != lastUpdated) {
-                    self.getFirebaseDrugList(firebaseUpdateDate: firebaseLastUpdate, updateCompleteHandler: completionHandler)
-                }
-                else {
-                    //all up to date!
-                    completionHandler([], "")
-                }
-            }) { (error) in
-                print(error.localizedDescription)
+        ref.child("Update").observeSingleEvent(of: .value, with: {(snapshot) in
+            firebaseLastUpdate = (snapshot.value as! NSString) as String
+            if(firebaseLastUpdate != lastUpdated) {
+                self.getFirebaseDrugList(firebaseUpdateDate: firebaseLastUpdate, updateCompleteHandler: completionHandler)
             }
+            else {
+                //all up to date!
+                completionHandler([], "")
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     
     func getFirebaseDrugList(firebaseUpdateDate:String, updateCompleteHandler: @escaping ([DrugBase], String) -> Void) {
         var firebaseUpdatedCount = 0 //things that have been sucessfully parsed
         var allDrugList = [DrugBase]()
-
+        
         getFormularyDrugList(completionHandler: {formularyDrugList in
             allDrugList.append(contentsOf:formularyDrugList)
             firebaseUpdatedCount += 1
@@ -84,7 +84,7 @@ class FirebaseHelper {
                     drugClass = self.trimNSNull(arr: drugClassArr)
                 } else {
                     let drugClassDict = drugProp["drugClass"] as! NSDictionary
-                    drugClass = self.trimNSNull(arr: drugClassDict.allValues as! NSMutableArray)
+                    drugClass = self.dictTrimNSNull(arr: drugClassDict.allValues)
                 }
                 
                 var altNames:[String]
@@ -92,12 +92,12 @@ class FirebaseHelper {
                     altNames = self.trimNSNull(arr: altNamesArr)
                 } else {
                     let altNamesDict = drugProp["alternateName"] as! NSDictionary
-                    altNames = self.trimNSNull(arr: altNamesDict.allValues as! NSMutableArray)
+                    altNames = self.dictTrimNSNull(arr: altNamesDict.allValues)
                 }
                 
                 var strengths:[String]
                 if let strengthDict = drugProp["strengths"] as? NSDictionary {
-                    strengths = self.trimNSNull(arr: strengthDict.allValues as! NSMutableArray)
+                    strengths = self.dictTrimNSNull(arr: strengthDict.allValues)
                 } else {
                     let strengthArr = drugProp["strengths"] as! NSMutableArray
                     strengths = self.trimNSNull(arr: strengthArr)
@@ -138,15 +138,15 @@ class FirebaseHelper {
                     drugClass = self.trimNSNull(arr: drugClassArr)
                 } else {
                     let drugClassDict = drugProp["drugClass"] as! NSMutableDictionary
-                    drugClass = self.trimNSNull(arr: drugClassDict.allValues as! NSMutableArray)
+                    drugClass = self.dictTrimNSNull(arr: drugClassDict.allValues)
                 }
-
+                
                 var altNames:[String]
                 if let altNamesArr = drugProp["alternateName"] as? NSMutableArray {
                     altNames = self.trimNSNull(arr: altNamesArr)
                 } else {
                     let altNamesDict = drugProp["alternateName"] as! NSDictionary
-                    altNames = self.trimNSNull(arr: altNamesDict.allValues as! NSMutableArray)
+                    altNames = self.dictTrimNSNull(arr: altNamesDict.allValues)
                 }
                 
                 let eDrug = ExcludedDrug.init(primaryName: pName, nameType: nType, alternateNames: altNames, criteria: crit, status: Status.EXCLUDED, drugClass: drugClass)
@@ -184,7 +184,7 @@ class FirebaseHelper {
                     drugClass = self.trimNSNull(arr: drugClassArr)
                 } else {
                     let drugClassDict = drugProp["drugClass"] as! NSMutableDictionary
-                    drugClass = self.trimNSNull(arr: drugClassDict.allValues as! NSMutableArray)
+                    drugClass = self.dictTrimNSNull(arr: drugClassDict.allValues)
                 }
                 
                 var altNames:[String]
@@ -192,7 +192,7 @@ class FirebaseHelper {
                     altNames = self.trimNSNull(arr: altNamesArr)
                 } else {
                     let altNamesDict = drugProp["alternateName"] as! NSDictionary
-                    altNames = self.trimNSNull(arr: altNamesDict.allValues as! NSMutableArray)
+                    altNames = self.dictTrimNSNull(arr: altNamesDict.allValues)
                 }
                 
                 let rDrug = RestrictedDrug.init(primaryName: pName, nameType: nType, alternateNames: altNames, criteria: crit, status: Status.RESTRICTED, drugClass: drugClass)
@@ -238,4 +238,13 @@ class FirebaseHelper {
         return stringArr
     }
     
+    private func dictTrimNSNull(arr:[Any]) -> [String] {
+        var stringArr = [String]()
+        for element in arr {
+            if let e = element as? String {
+                stringArr.append(e)
+            }
+        }
+        return stringArr
+    }
 }

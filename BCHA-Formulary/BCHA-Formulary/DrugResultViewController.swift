@@ -93,8 +93,10 @@ class DrugResultViewController: UITableViewController {
             if(drugResult.status == Status.FORMULARY){
                 return "Strengths"
             }
-            else{
+            else if (drugResult.status == Status.EXCLUDED){
                 return "Reason for Exclusion"
+            } else {
+                return "Reason for Restriction"
             }
         }
         else{
